@@ -1,0 +1,71 @@
+body {
+    background: black;
+}
+
+.face {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: white;
+}
+
+.piece {
+    display: block;
+    position: relative;
+    float: left;
+    width: calc(200px / 3 - 2px);
+    height: calc(200px / 3 - 2px);
+    border: 1px solid black;
+    background: white;
+}
+
+#s1 {
+    top: 110px;
+    left: 345px;
+    transform: rotateZ(15deg) skew(-15deg, -15deg);
+}
+
+#s2 {
+    top: 290px;
+    left: 345px;
+    transform: rotateZ(-15deg) skew(15deg, 15deg);
+}
+
+#s3 {
+    top: 200px;
+    left: 501px;
+    transform: rotateZ(45deg) skew(15deg, 15deg);
+}
+
+#s4 {
+    top: 110px;
+    left: 657px;
+    transform: rotateZ(-15deg) skew(15deg, 15deg);
+}
+
+#s5 {
+    top: 290px;
+    left: 657px;
+    transform: rotateZ(15deg) skew(-15deg, -15deg);
+}
+
+.r {
+    background: red;
+}
+
+.o {
+    background: orange;
+}
+
+.y {
+    background: yellow;
+}
+
+.g {
+    background: limegreen;
+}
+
+.b {
+    background: blue;
+}

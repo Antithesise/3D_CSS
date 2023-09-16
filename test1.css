@@ -1,0 +1,147 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body {
+    margin: 0;
+    background: rgb(52, 32, 83);
+}
+
+body::before {
+    display: block;
+    position: fixed;
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(farthest-side, rgb(62, 62, 97), 70%, rgb(52, 32, 83));
+    filter: blur(10px);
+}
+
+ul {
+    display: block;
+    position: relative;
+    top: 50vh;
+    left: 50vw;
+    width: fit-content;
+    transform: translate(-50%, calc(13.5px - 50%));
+}
+
+ul li {
+    display: block;
+    position: relative;
+    z-index: calc(11 - var(--num));
+    background: currentColor;
+    color: rgb(56, 40, 149);
+    transform-origin: center;
+    transform: skewY(-15deg);
+    transition: transform 0.4s ease-in, color 0.8s;
+    box-shadow: -40px -40px currentColor;
+}
+
+ul li:hover {
+    color: rgb(21, 70, 217);
+    transform: translateX(80px) translateY(-21.4px) skewY(-15deg);
+    transition: transform 0.8s 0.1s, color 0.2s 0.1s;
+}
+
+ul li::before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -40px;
+    height: 100%;
+    width: 40px;
+    background: currentColor;
+    filter: brightness(80%);
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: filter 0.4s ease-in;
+}
+
+ul li:hover::before {
+    filter: brightness(50%);
+    transition: filter 0.8s 0.1s;
+}
+
+ul li::after {
+    display: block;
+    position: absolute;
+    content: "";
+    top: -40px;
+    width: 100%;
+    height: 40px;
+    background: currentColor;
+    filter: brightness(60%) drop-shadow(calc(-440px + 44px * calc(var(--num) - 1)) calc(44px * calc(11 - var(--num))) rgb(39, 23, 63));
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: filter 0.8s 0.1s;
+}
+
+ul li:hover::after {
+    filter: brightness(90%) drop-shadow(calc(-440px + 44px * calc(var(--num) - 1)) calc(44px * calc(11 - var(--num))) rgb(39, 23, 63));
+}
+
+ul li * {
+    display: block;
+    margin: 0;
+    padding: 10px;
+    color: currentColor;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    text-transform: uppercase;
+    filter: invert(100%) hue-rotate(180deg);
+}
+
+ul li:nth-child(1) {
+    --num: 1;
+}
+
+ul li + li {
+    --num: 2;
+}
+
+ul li:nth-child(3) {
+    --num: 3;
+}
+
+ul li:nth-child(4) {
+    --num: 4;
+}
+
+ul li:nth-child(5) {
+    --num: 5;
+}
+
+ul li:nth-child(6) {
+    --num: 6;
+}
+
+ul li:nth-child(7) {
+    --num: 7;
+}
+
+ul li:nth-child(8) {
+    --num: 8;
+}
+
+ul li:nth-child(9) {
+    --num: 9;
+}
+
+ul li:nth-child(10) {
+    --num: 10;
+}
+
+ul li:nth-child(1):hover::before {
+    filter: brightness(80%);
+}
+
+ul li:nth-child(1)::after {
+    filter: brightness(90%) drop-shadow(calc(-440px + 44px * calc(var(--num) - 1)) calc(44px * calc(11 - var(--num))) rgb(39, 23, 63));
+}
+
+ul li:nth-child(1):hover + li::after {
+    filter: brightness(90%) drop-shadow(calc(-440px + 44px * calc(var(--num) - 1)) calc(44px * calc(11 - var(--num))) rgb(39, 23, 63));
+}

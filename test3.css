@@ -1,0 +1,106 @@
+#ywrapper {
+    position: absolute;
+    display: block;
+    top: 50vh;
+    left: 50vw;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    animation: nod 11s infinite ease-in-out alternate;
+}
+
+#wrapper {
+    position: relative;
+    display: block;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    animation: spin 5s infinite linear;
+}
+
+#box {
+    position: relative;
+    display: block;
+    height: 40vh;
+    width: 40vh;
+    background: red;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: rotateY(45deg) rotateX(90deg) translateZ(10vh);
+}
+
+#box::before {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 20vh;
+    width: 56.5685424949238vh;
+    background: blue;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+    transform: rotateZ(45deg) rotateX(-90deg);
+}
+
+#box::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 20vh;
+    width: 56.5685424949238vh;
+    background: yellow;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+    transform: rotateZ(-45deg) rotateX(-90deg);
+}
+
+#boxbottom {
+    position: relative;
+    display: block;
+    height: 40vh;
+    width: 40vh;
+    background: green;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: translateZ(-20vh);
+}
+
+/* #boxbottom::before {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 44.721359549995793928183473374626vh;
+    width: 40vh;
+    background: indigo;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+    transform: translateZ(20vh) rotateX(-26.5deg);
+}
+
+#boxbottom::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 44.721359549995793928183473374626vh;
+    width: 40vh;
+    background: orange;
+    transform-style: preserve-3d;
+    transform-origin: top left;
+    transform: rotateX(26.5deg);
+} */
+
+
+@keyframes nod {
+    0% {
+        transform: translate(-50%, -50%) rotateX(15deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateX(-15deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateY(0deg);
+    }
+    0% {
+        transform: rotateY(360deg);
+    }
+}

@@ -1,0 +1,449 @@
+:root, * {
+    font-size: 5vh;
+    shape-rendering: geometricPrecision;
+    image-rendering: crisp-edges;
+}
+
+body {
+    background: #fffff0;
+    overflow: hidden;
+}
+
+#wrapper {
+    position: absolute;
+    display: block;
+    top: 5vh;
+    left: 0;
+    height: 95vh;
+    width: 100vw;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    animation: up-down 10s ease-in-out infinite alternate;
+}
+
+#left {
+    position: absolute;
+    display: block;
+    top: 25vh;
+    left: calc(50vw - 25vh);
+    height: 50vh;
+    width: 50vh;
+    background: #fdf8f5;
+    transform-style: preserve-3d;
+    transform: translateZ(-25vh);
+}
+
+#left::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -2vh;
+    left: 0;
+    height: 2vh;
+    width: calc(100% + 2vh);
+    background: #f2ede9;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: translateZ(-2vh) rotateX(-90deg);
+}
+
+#left::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    height: calc(100% + 2vh);
+    width: 2vh;
+    background: #f2ede9;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+}
+
+#left-shadow {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vh;
+    box-shadow: inset -1px -1px 9px -8px black;
+    pointer-events: none;
+}
+
+#right {
+    position: absolute;
+    display: block;
+    top: 25vh;
+    left: 50vw;
+    height: 50vh;
+    width: 50vh;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg);
+}
+
+#right::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -2vh;
+    left: -2vh;
+    height: 2vh;
+    width: calc(100% + 2vh);
+    background: #f2ede9;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: translateZ(-2vh) rotateX(-90deg);
+}
+
+#right::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    right: 0;
+    height: calc(100% + 2vh);
+    width: 2vh;
+    background: #f2ede9;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg);
+}
+
+#right-shadow {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vh;
+    box-shadow: inset 1px -1px 9px -8px black;
+    pointer-events: none;
+}
+
+#window-wrapper {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vh;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+#window {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 30vh;
+    border-top: 10vh solid #f8f2ed;
+    border-bottom: 20vh solid #f8f2ed;
+    border-left: 10vh solid #f8f2ed;
+    border-right: 10vh solid #f8f2ed;
+    overflow: visible;
+    transform-style: preserve-3d;
+}
+
+#window::before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2vh;
+    width: calc(100% + 2vh);
+    background: #f2ede9;
+    box-shadow: inset 0 0 9px -9px black;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: translateZ(-2vh) rotateX(-90deg);
+}
+
+#window::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: calc(100% + 2vh);
+    width: 2vh;
+    background: #f2ede9;
+    box-shadow: inset 0 0 9px -9px black;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: translateZ(-2vh) rotateY(-90deg);
+}
+
+#window-shadow {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 30vh;
+    box-shadow: 1px 1px 9px -9px black;
+    pointer-events: none;
+    transform-style: preserve-3d;
+}
+
+#window-shadow::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 30vh;
+    border: 1px solid rgba(73, 73, 73, 0.2);
+    background: rgba(213, 213, 213, 0.2);
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    transform: translateZ(-1.2vh);
+}
+
+#window-shadow::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 20vh;
+    width: 30vh;
+    border: 1px solid rgba(73, 73, 73, 0.1);
+    background: rgba(213, 213, 213, 0.2);
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    transform: translateZ(-0.8vh);
+}
+
+#floor {
+    position: absolute;
+    display: block;
+    top: 50vh;
+    left: calc(50vw - 25vh);
+    height: 50vh;
+    width: 50vh;
+    background: #d3d3d3;
+    box-shadow: inset -1px 1px 9px -8px black;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+}
+
+#floor::before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 2vh;
+    width: calc(100% + 2vh);
+    background: #f2ede9;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+}
+
+#floor::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -2vh;
+    left: -2vh;
+    height: calc(100% + 2vh);
+    width: 2vh;
+    background: #f2ede9;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg);
+}
+
+#floor-shadow {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vh;
+    box-shadow: inset -1px 1px 9px -8px black;
+    pointer-events: none;
+}
+
+#lbench {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    height: 17vh;
+    width: 47vh;
+    background: #dddbd4;
+    box-shadow: inset 1px 0 9px -9px black;
+    transform-style: preserve-3d;
+    transform: translateZ(18vh);
+}
+
+#lbench::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 17vh;
+    width: 18vh;
+    background: #c6c3b6;
+    box-shadow: inset 1px 0 9px -9px black;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+}
+
+#lbench::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 18vh;
+    width: 30vh;
+    background: #cfcabf;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+}
+
+#rbench {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    height: 13vh;
+    width: 9vh;
+    border-top: 18vh solid #dddbd4;
+    border-bottom: 19vh solid #dddbd4;
+    border-left: 3vh solid #dddbd4;
+    border-right: 5vh solid #dddbd4;
+    box-shadow: inset 1px 0 9px -9px black;
+    transform-style: preserve-3d;
+    transform: translateZ(18vh);
+}
+
+#rbench::before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -19vh;
+    left: -3vh;
+    height: 33vh;
+    width: 18vh;
+    background: #cac5b9;
+    box-shadow: inset 1px 0 9px -9px black;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+}
+
+#rbench::after {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: -19vh;
+    left: -3vh;
+    height: 18vh;
+    width: 17vh;
+    background: #c6c3b6;
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+}
+
+.check {
+    display: none;
+}
+
+.check:checked + label .point {
+    visibility: hidden; /* display: none resets animation cycle */
+}
+
+.point {
+    position: absolute;
+    display: block;
+    height: 0.5vh;
+    width: 0.5vh;
+    border-radius: 50%;
+    border: 0.5vh solid rgba(0, 0, 0, 0.3);
+    background-color: black;
+    background-clip: padding-box;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    animation: blink 3s infinite;
+    transition: background-color 0.1s;
+    appearance: none;
+}
+
+.check + label:hover .point, .point:hover {
+    background-color: black;
+    background-clip: padding-box;
+    opacity: 60%;
+    box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1) !important; /* bad practice, but overrides animation without distrubing cycle*/
+}
+
+.point::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -2vh;
+    left: -2vh;
+    height: 0.5vh;
+    width: 0.5vh;
+    border-radius: 50%;
+    border: 2vh solid transparent;
+}
+
+@keyframes up-down {
+    0% {
+        transform: rotateX(-10deg) rotateY(45deg);
+    }
+    100% {
+        transform: rotateX(-25deg) rotateY(45deg);
+    }
+}
+
+@keyframes blink {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    20% {
+        box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1);
+    }
+
+    29% {
+        box-shadow: 0 0 2vh 0 rgba(0, 0, 0, 0);
+    }
+
+    30% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1);
+    }
+
+    59% {
+        box-shadow: 0 0 2vh 0 rgba(0, 0, 0, 0);
+    }
+
+    60% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
