@@ -4,42 +4,79 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="factory.css">
-        <title>Testing</title>
+        <title>Aperture Science</title>
     </head>
     <body>
         <div id="content">
+            <div id="platform1" class="platform">
+                <div class="support"></div>
+                <div class="ladder"></div>
+            </div>
+            <div id="platform2" class="platform">
+                <div class="platform-shadows"></div>
+                <div class="support"></div>
+                <div class="ladder"></div>
+            </div>
+            <div id="platform3" class="platform hide">
+                <div class="support"></div>
+                <div class="ladder"></div>
+            </div>
+            <div id="b-portal" class="portal"></div>
+            <div id="o-portal" class="portal"></div>
             <div id="conveyor1" class="conveyor-x">
                 <div id="scanner"></div>
             </div>
             <div class="cube-wrapper-x bob">
-                <div class="cube-x roll d1">
+                <div class="cube-x roll d">
                     <div class="face3 fa"></div>
                     <div class="face3 fb"></div>
                     <div class="face3 fc"></div>
                     <div class="face3 fd"></div>
                     <div class="face3 fe"></div>
                 </div>
-            </div>
-            <div class="cube-wrapper-x bob">
-                <div class="cube-x roll d2">
+                <div class="cube-x roll d">
                     <div class="face3 fa"></div>
                     <div class="face3 fb"></div>
                     <div class="face3 fc"></div>
                     <div class="face3 fd"></div>
                     <div class="face3 fe"></div>
                 </div>
-            </div>
-            <div class="cube-wrapper-x bob">
-                <div class="cube-x roll d3">
+                <div class="cube-x roll d">
                     <div class="face3 fa"></div>
                     <div class="face3 fb"></div>
                     <div class="face3 fc"></div>
                     <div class="face3 fd"></div>
                     <div class="face3 fe"></div>
                 </div>
-            </div>
-            <div class="cube-wrapper-x bob">
-                <div class="cube-x roll d4">
+                <div class="cube-x roll d">
+                    <div class="face3 fa"></div>
+                    <div class="face3 fb"></div>
+                    <div class="face3 fc"></div>
+                    <div class="face3 fd"></div>
+                    <div class="face3 fe"></div>
+                </div>
+                <div class="cube-x roll d">
+                    <div class="face3 fa"></div>
+                    <div class="face3 fb"></div>
+                    <div class="face3 fc"></div>
+                    <div class="face3 fd"></div>
+                    <div class="face3 fe"></div>
+                </div>
+                <div class="cube-x roll d">
+                    <div class="face3 fa"></div>
+                    <div class="face3 fb"></div>
+                    <div class="face3 fc"></div>
+                    <div class="face3 fd"></div>
+                    <div class="face3 fe"></div>
+                </div>
+                <div class="cube-x roll d">
+                    <div class="face3 fa"></div>
+                    <div class="face3 fb"></div>
+                    <div class="face3 fc"></div>
+                    <div class="face3 fd"></div>
+                    <div class="face3 fe"></div>
+                </div>
+                <div class="cube-x roll d">
                     <div class="face3 fa"></div>
                     <div class="face3 fb"></div>
                     <div class="face3 fc"></div>
@@ -48,19 +85,23 @@
                 </div>
             </div>
             <div id="left" class="wall"></div>
-            <div id="right" class="wall">
-                <div id="platform">
-                    <div id="platform-shadows"></div>
-                    <div id="support"></div>
-                    <div id="ladder"></div>
-                </div>
-            </div>
+            <div id="right" class="wall"></div>
             <div id="back" class="wall">
-                <div id="apsci-logo">
-                    <svg id="apsci-svg" viewBox="0 0 532 532"><g><g id="b"><path id="c" d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><path d="M 443.5 94.5 C 386.5 118.5 338.5 163.5 312.5 221.5 L 560.5 175.5" fill="#e39316" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0, 1, -1, 0, 0.000014, -0.000017)"></path>                    </g><g transform="matrix(-1, 0, 0, -1, 532, 532)"><g><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><g transform="matrix(0, 1, -1, 0, 532, 0)"><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g></g></svg>
-                    <h1 id="apsci-title">APERTURE</h1>
-                    <h2 id="apsci-sub">LABORATORIES</h2>
-                    <h3 id="apsci-loc">MANUFACTURING FACILITY 27A</h3>
+                <div class="apsci-logo hide">
+                    <h1 class="apsci-title">APERTURE</h1>
+                    <h2 class="apsci-sub">LABORATORIES</h2>
+                    <h3 class="apsci-loc">MANUFACTURING<br>FACILITY 27A</h3>
+                </div>
+                <div class="apsci-logo">
+                    <svg class="apsci-svg" viewBox="0 0 532 532"><g><g id="b"><path id="c" d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><path d="M 443.5 94.5 C 386.5 118.5 338.5 163.5 312.5 221.5 L 560.5 175.5" fill="#e39316" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0, 1, -1, 0, 0.000014, -0.000017)"></path>                    </g><g transform="matrix(-1, 0, 0, -1, 532, 532)"><g><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><g transform="matrix(0, 1, -1, 0, 532, 0)"><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g></g></svg>
+                    <h1 class="apsci-title">APERTURE</h1>
+                    <h2 class="apsci-sub">LABORATORIES</h2>
+                    <h3 class="apsci-loc">MANUFACTURING<br>FACILITY 27A</h3>
+                </div>
+                <div class="apsci-logo hide"><svg class="apsci-svg" viewBox="0 0 532 532"><g><g id="b"><path id="c" d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><path d="M 443.5 94.5 C 386.5 118.5 338.5 163.5 312.5 221.5 L 560.5 175.5" fill="#e39316" style="transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0, 1, -1, 0, 0.000014, -0.000017)"></path>                    </g><g transform="matrix(-1, 0, 0, -1, 532, 532)"><g><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g><g transform="matrix(0, 1, -1, 0, 532, 0)"><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316"></path><path d="m165 32c-57 24-105 69-131 127l248-46" fill="#e39316" transform="matrix(0.7071067811865476, 0.7071067811865476, -0.7071067811865476, 0.7071067811865476, 266, -110.18080759124331)"></path></g></g></svg>
+                    <h1 class="apsci-title">APERTURE</h1>
+                    <h2 class="apsci-sub">LABORATORIES</h2>
+                    <h3 class="apsci-loc">MANUFACTURING<br>FACILITY 27A</h3>
                 </div>
             </div>
             <div id="ceil" class="wall">
@@ -98,31 +139,33 @@
                 </div>
             </div>
             <div id="floor" class="wall">
+                <div id="table">
+                    <div id="cake"></div>
+                </div>
                 <div id="conveyor2" class="conveyor-z">
+                    <div class="outlet">
+                        <div class="flap">
+                            <div class="flap2"></div>
+                        </div>
+                    </div>
                     <div class="belt slide"></div>
                     <div class="cube-wrapper-z">
-                        <div class="cube-z slide d1">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d2">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d3">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d4">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
@@ -130,30 +173,29 @@
                     </div>
                 </div>
                 <div id="conveyor3" class="conveyor-z">
+                    <div class="outlet">
+                        <div class="flap">
+                            <div class="flap2"></div>
+                        </div>
+                    </div>
                     <div class="belt slide"></div>
                     <div class="cube-wrapper-z">
-                        <div class="cube-z slide d1">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d2">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d3">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>
                         </div>
-                    </div>
-                    <div class="cube-wrapper-z">
-                        <div class="cube-z slide d4">
+                        <div class="cube-z slide d">
                             <div class="face fb"></div>
                             <div class="face fc"></div>
                             <div class="face ff"></div>

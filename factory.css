@@ -1,4 +1,4 @@
-:root, *, *::before, *::after {
+:root, #content *, #content *::before, #content *::after {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     backface-visibility: hidden;
     text-rendering: optimizeSpeed;
@@ -23,22 +23,18 @@ body {
     top: 0;
     left: 0;
     padding-top: 50vh;
-    /* transform: translateX(14.5vw) translateY(15vw) translateZ(65vw); */
-    /* transform: rotateX(46deg) rotateY(-22.5deg); */
-    /* transform: rotateX(22.5deg) rotateY(45deg) rotateZ(22.5deg); */
-    /* transform: translateY(-40vw) rotateX(-22.5deg); */
-    /* transform: translateZ(-10vw); */
-    /* transform: translateZ(50vw) translateX(15vw)rotateY(70deg); */
+    z-index: 0;
+    transform: translateY(11vw) translateZ(-50vw);
     transform-origin: center center;
     transform-style: preserve-3d;
-    animation: tour 30s ease-in-out infinite;
+    animation: tour 30s ease-in-out 1;
     will-change: transform;
 }
 
 #conveyor1 {
     left: -0.5vw;
     margin-top: -1.75vw;
-    transform: rotateX(90deg);
+    transform: translateZ(-5vw) rotateX(90deg);
 }
 
 #conveyor2 {
@@ -67,9 +63,13 @@ body {
     height: 6.5vw;
     width: 9vw;
     top: -0.5vw;
-    left: 60vw;
-    background: repeating-linear-gradient(270deg, transparent 0.5vw, #ffffff0a 0.75vw, transparent 1vw, transparent 1.5vw), #aa638971;
-    box-shadow: inset 0 -1vw 1vw -1vw #ffffff4e, inset 0 1vw 1vw -1vw #ffffff4e;
+    left: 160vw;
+    background:
+        repeating-linear-gradient(270deg, transparent 0.5vw, #ffffff0a 0.75vw, transparent 1vw, transparent 1.5vw),
+        #aa638971;
+    box-shadow:
+        inset 0 -1vw 1vw -1vw #ffffff4e,
+        inset 0 1vw 1vw -1vw #ffffff4e;
     backface-visibility: visible;
     transform: rotateY(-90deg);
     transform-origin: left;
@@ -81,10 +81,15 @@ body {
     position: absolute;
     display: block;
     height: 0.5vw;
-    width: 100%;
+    width: 9.25vw;
     top: -0.25vw;
+    left: 0;
+    border-radius: 0 0.25vw 0.25vw 0;
     background: #646464;
-    box-shadow: inset -0.1vw 0 0.1vw -0.1vw #ffffff36, inset 0 0.1vw 0.1vw -0.1vw #ffffff36, inset 0 -0.1vw 0.1vw -0.1vw #ffffff36;
+    box-shadow:
+        inset -0.1vw 0 0.1vw -0.1vw #ffffff36,
+        inset 0 0.1vw 0.1vw -0.1vw #ffffff36,
+        inset 0 -0.1vw 0.1vw -0.1vw #ffffff36;
     transform: rotateX(-90deg);
     transform-origin: center center;
     transform-style: preserve-3d;
@@ -95,33 +100,115 @@ body {
     position: absolute;
     display: block;
     height: 0.5vw;
-    width: 100%;
+    width: 9.25vw;
     bottom: -0.25vw;
+    left: 0;
     border-radius: 0 0.25vw 0.25vw 0;
     background: #646464;
-    box-shadow: inset -0.1vw 0 0.1vw -0.1vw #ffffff36, inset 0 0.1vw 0.1vw -0.1vw #ffffff36, inset 0 -0.1vw 0.1vw -0.1vw #ffffff36;
+    box-shadow:
+        inset -0.1vw 0 0.1vw -0.1vw #ffffff36,
+        inset 0 0.1vw 0.1vw -0.1vw #ffffff36,
+        inset 0 -0.1vw 0.1vw -0.1vw #ffffff36;
     transform: rotateX(-90deg);
     transform-origin: center center;
     transform-style: preserve-3d;
 }
 
-#platform {
+.portal {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    height: 20vw;
+    width: 10vw;
+    margin-top: -10vw;
+    border-radius: 50%;
+    z-index: 100;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+}
+
+.portal::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background:
+        repeating-linear-gradient(#535353, #535353 0.05vw, transparent 0.15vw, transparent 19.85vw, #535353 19.95vw, #535353 20vw),
+        repeating-linear-gradient(90deg, #535353, #535353 0.05vw, transparent 0.15vw, transparent 9.85vw, #535353 9.95vw, #535353 10vw),
+        #969591;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, transparent 5vw, #000 5vw);
+    mask-image: radial-gradient(ellipse at 50% 50%, transparent 5vw, #000 5vw);
+}
+
+.portal::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+}
+
+#b-portal {
+    left: -5vw;
+    transform: translateZ(-5vw) rotateY(90deg);
+}
+
+#b-portal::after {
+    box-shadow:
+        0 0 0 1px #047ae5,
+        0 0 2vw #42adf9;
+    background: radial-gradient(ellipse at 50% 50%, transparent 3.8vw, #005bed 4.6vw, #03fdfc 4.9vw, #047ae5 4.9vw);
+}
+
+#o-portal {
+    right: -5vw;
+    transform: translateZ(-5vw) rotateY(-90deg);
+}
+
+#o-portal::after {
+    box-shadow:
+        0 0 0 1px #c7ac15,
+        0 0 2vw #ff9106;
+    background: radial-gradient(ellipse at 50% 50%, transparent 3.8vw, #ff8f06 4.6vw, #cfbc0e 4.9vw, #c7ac15 4.9vw);
+}
+
+.platform {
     position: absolute;
     display: block;
     height: 20.25vw;
     width: 35.25vw;
-    top: 15vw;
-    left: 0;
-    background: linear-gradient(90deg, #424242 0.2vw, transparent 0.2vw), linear-gradient(#424242 0.2vw, transparent 0.2vw);
+    top: calc(50vh - 10vw);
+    left: 62.15vw;
+    background:
+        linear-gradient(90deg, #424242 0.2vw, transparent 0.2vw),
+        linear-gradient(#424242 0.2vw, transparent 0.2vw);
     background-size: 1vw 1vw;
     box-shadow: inset 0 0 5vw -2vw #00000097;
-    backface-visibility: visible;
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
+    backface-visibility: visible !important;
+    transform: translateZ(-32.41vw) rotateY(-90deg) rotateX(-90deg);
+    transform-origin: top;
     transform-style: preserve-3d;
 }
 
-#platform::before {
+#platform1 {
+    left: -37.9vw;
+}
+
+#platform1 .support {
+    height: 26.516vw; /* √2(20.25 - 1.5) =~ 26.516 */
+}
+
+#platform3 {
+    left: 162.15vw;
+}
+
+.platform::before {
     content: "";
     position: absolute;
     display: block;
@@ -131,14 +218,17 @@ body {
     top: 0;
     left: 0;
     border-bottom: 0.7vw solid #414141;
-    background: linear-gradient(180deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw), linear-gradient(90deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw);
+    background:
+        linear-gradient(180deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw),
+        linear-gradient(90deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw);
     background-size: 5vw 50%;
+    backface-visibility: visible !important;
     transform-origin: top;
     transform-style: preserve-3d;
     transform: rotateX(90deg) translateY(-7.5vw);
 }
 
-#platform::after {
+.platform::after {
     content: "";
     position: absolute;
     display: block;
@@ -148,40 +238,31 @@ body {
     top: 0;
     right: 0;
     border-right: 0.7vw solid #414141;
-    background: linear-gradient(90deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw), linear-gradient(180deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw);
+    background:
+        linear-gradient(90deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw),
+        linear-gradient(180deg, #424242, #646464 0.2vw, #646464 0.3vw, #424242 0.5vw, transparent 0.5vw);
     background-size: 50% 5vw;
     transform-origin: right;
     transform-style: preserve-3d;
     transform: rotateY(-90deg) rotateX(180deg) translateX(0.2vw);
 }
 
-#platform-shadows {
+.platform-shadows {
     position: absolute;
     display: block;
     height: 7vw;
     width: 100%;
     bottom: 0;
     left: 0;
-    box-shadow: 1vw 1vw 1.5vw -1.5vw #00000092, inset -1vw -1vw 1.5vw -1.5vw #00000092;
+    box-shadow:
+        1vw 1vw 1.5vw -1.5vw #00000092,
+        inset -1vw -1vw 1.5vw -1.5vw #00000092;
     transform: rotateX(90deg) translateZ(0.5px);
     transform-origin: bottom;
     transform-style: preserve-3d;
 }
 
-#platform-shadows {
-    position: absolute;
-    display: block;
-    height: 7vw;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    box-shadow: 1vw 1vw 1.5vw -1.5vw #00000092, inset -1vw -1vw 1.5vw -1.5vw #00000092;
-    transform: rotateX(90deg) translateZ(0.5px);
-    transform-origin: bottom;
-    transform-style: preserve-3d;
-}
-
-#platform-shadows::before {
+.platform-shadows::before {
     content: "";
     position: absolute;
     display: block;
@@ -192,7 +273,7 @@ body {
     box-shadow: 0 0 1.5vw 0.5vw #0000004c;
 }
 
-#platform-shadows::after {
+.platform-shadows::after {
     content: "";
     position: absolute;
     display: block;
@@ -200,13 +281,15 @@ body {
     width: 20.25vw;
     bottom: 0;
     left: 0;
-    box-shadow: 1vw -1vw 1.5vw -1.5vw #00000092, inset -1vw 1vw 1.5vw -1.5vw #00000092;
+    box-shadow:
+        1vw -1vw 1.5vw -1.5vw #00000092,
+        inset -1vw 1vw 1.5vw -1.5vw #00000092;
     transform: rotateY(-90deg) rotateX(180deg) translateZ(0.5px);
     transform-origin: left;
     transform-style: preserve-3d;
 }
 
-#support {
+.support {
     position: absolute;
     display: block;
     height: 27.23vw; /* √2(20.25 - 1) =~ 27.23 */
@@ -220,7 +303,7 @@ body {
     transform: rotateX(45deg);
 }
 
-#support::before {
+.support::before {
     content: "";
     position: absolute;
     display: block;
@@ -236,7 +319,7 @@ body {
     transform: rotateY(90deg) translateX(0.5vw);
 }
 
-#support::after {
+.support::after {
     content: "";
     position: absolute;
     display: block;
@@ -252,22 +335,25 @@ body {
     transform: rotateY(180deg) translateZ(0.5vw);
 }
 
-#ladder {
+.ladder {
     position: absolute;
     display: block;
     height: 5vw;
-    width: 64.75vw;
+    width: 60vw;
     top: 1vw;
     left: 0.5vw;
     background: linear-gradient(180deg, #494949, #6e6e6e 0.2vw, #6e6e6e 0.3vw, #494949 0.5vw, transparent 0.5vw), linear-gradient(90deg, #494949, #6e6e6e 0.2vw, #6e6e6e 0.3vw, #494949 0.5vw, transparent 0.5vw);
     background-size: 2vw 4.5vw;
-    box-shadow: inset 0 2vw 2vw -2vw #00000097, inset 0 -2vw 2vw -2vw #00000097, 0 0 2vw -0.5vw #00000097;
+    box-shadow:
+        inset 0 2vw 2vw -2vw #00000097,
+        inset 0 -2vw 2vw -2vw #00000097,
+        0 0 2vw -0.5vw #00000097;
     transform-origin: left;
     transform-style: preserve-3d;
     transform: rotateY(-90deg) rotateX(180deg);
 }
 
-#ladder::before {
+.ladder::before {
     content: "";
     position: absolute;
     display: block;
@@ -282,7 +368,7 @@ body {
     transform: rotateX(-90deg) translateZ(0.5vw);
 }
 
-#ladder::after {
+.ladder::after {
     content: "";
     position: absolute;
     display: block;
@@ -306,9 +392,12 @@ body {
     left: 80vw;
     border-left: 1vw solid #3e3e3e;
     border-right: 1vw solid #535353;
-    background: #646464;
-    background-image: repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw);
-    box-shadow: inset 3vw 1.5vw 4vw -3vw #00000097, inset -3vw -1.5vw 4vw -3vw #00000097;
+    background:
+        repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw),
+        #646464;
+    box-shadow:
+        inset 3vw 1.5vw 4vw -3vw #00000097,
+        inset -3vw -1.5vw 4vw -3vw #00000097;
     transform-origin: left;
     transform-style: preserve-3d;
     transform: rotateY(-90deg);
@@ -324,9 +413,12 @@ body {
     left: -1vw;
     border-left: 1vw solid #535353;
     border-right: 1vw solid #3e3e3e;
-    background: #646464;
-    background-image: repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw);
-    box-shadow: inset 3vw -1vw 4vw -3vw #00000097, inset -3vw 2vw 4vw -3vw #00000097;
+    background:
+        repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw),
+        #646464;
+    box-shadow:
+        inset 3vw -1vw 4vw -3vw #00000097,
+        inset -3vw 2vw 4vw -3vw #00000097;
     transform-origin: bottom;
     transform-style: preserve-3d;
     transform: rotateX(90deg) rotateY(180deg);
@@ -342,9 +434,12 @@ body {
     left: -1vw;
     border-left: 1vw solid #3e3e3e;
     border-right: 1vw solid #535353;
-    background: #646464;
-    background-image: repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw);
-    box-shadow: inset 3vw 1vw 4vw -3vw #00000097, inset -3vw -2vw 4vw -3vw #00000097;
+    background:
+        repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw),
+        #646464;
+    box-shadow:
+        inset 3vw 1vw 4vw -3vw #00000097,
+        inset -3vw -2vw 4vw -3vw #00000097;
     transform-origin: top;
     transform-style: preserve-3d;
     transform: rotateX(-90deg);
@@ -359,9 +454,13 @@ body {
     left: -1vw;
     border-left: 1vw solid #3e3e3e;
     border-right: 1vw solid #535353;
-    background: #646464;
-    background-image: repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw);
-    box-shadow: inset 3vw 3vw 4vw -3vw #00000097, inset -3vw -3vw 4vw -3vw #00000097, 0 0 3vw 0.5vw #00000082;
+    background:
+        repeating-linear-gradient(transparent 0, #0000000a 0.5vw, transparent 1vw, transparent 2vw),
+        #646464;
+    box-shadow:
+        inset 3vw 3vw 4vw -3vw #00000097,
+        inset -3vw -3vw 4vw -3vw #00000097,
+        0 0 3vw 0.5vw #00000082;
     transform-origin: center center;
     transform-style: preserve-3d;
     transform: translateZ(-20vw);
@@ -396,32 +495,61 @@ body {
     transform: rotateY(-90deg) rotateX(180deg);
 }
 
-#apsci-logo {
+.apsci-logo {
     position: absolute;
     display: block;
-    height: fit-content;
-    width: fit-content;
+    height: 31vw;
+    width: 67vw;
     top: 15vw;
-    text-shadow: 1px 1px #0000003d;
+    left: 102.5vw;
+    border-image: radial-gradient(#9f9f9f, #7b7b7b 6%, #5f5f5f 20%, transparent 20%, transparent 100%);
+    border-image-width: 3vw;
+    border-image-outset: -3vw;
+    background: linear-gradient(#4e4e4e, #8b8b8b 30%);
+    box-shadow: 0 0.1vw 0.2vw #0000005c;
+    text-shadow: 1px 1px #0000005c;
     user-select: none;
 }
 
-#apsci-svg {
+.apsci-logo::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 7vw;
+    width: 13vw;
+    top: 73.6vw;
+    left: 7.5vw;
+    box-shadow:
+        inset 0 6vw 6vw -6vw #000,
+        inset 0 6vw 6vw -6vw #2a2a2a,
+        inset 0 6vw 6vw -6vw #565656;
+    background: #353535;
+}
+
+.apsci-logo:first-child {
+    left: 2.5vw;
+}
+
+.apsci-logo:last-child {
+    left: 202.5vw;
+}
+
+.apsci-svg {
     position: absolute;
     display: block;
     height: 15vw;
     width: 15vw;
-    top: 0;
-    left: 0;
-    fill: black;
+    top: 3vw;
+    left: 3vw;
+    fill: #000;
     filter: drop-shadow(1px 1px #0000003d);
 }
 
-#apsci-title {
+.apsci-title {
     position: absolute;
     display: block;
-    top: -1.7vw;
-    left: 11.8vw;
+    top: 1.3vw;
+    left: 14.8vw;
     color: #e39316;
     font-size: 7vw;
     font-weight: bold;
@@ -429,67 +557,91 @@ body {
     transform: skewX(-18deg);
 }
 
-#apsci-sub {
+.apsci-sub {
     position: absolute;
     display: block;
-    top: 7.6vw;
-    left: 15.3vw;
+    top: 10.6vw;
+    left: 18.3vw;
     color: #e39316;
     font-size: 3vw;
     font-weight: 500;
     letter-spacing: 1.9vw;
 }
 
-#apsci-loc {
+.apsci-loc {
     position: absolute;
     display: block;
-    top: 14.5vw;
-    left: 3vw;
+    top: 17.5vw;
+    left: 6vw;
     color: #e39316;
     font-size: 2.5vw;
     font-weight: 500;
+    text-align: justify;
     text-align-last: justify;
     letter-spacing: 1.2vw;
 }
-
 
 .wall {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    height: max(100vw, 100vh);
+    height: 100vw;
     width: 100vw;
-    margin-top: min(-50vw, -50vh);
+    margin-top: -50vw;
     padding: 5vw;
-    background: #797979;
-    box-shadow: inset 0 0 30vw 5vw #00000034;
-    backface-visibility: hidden;
+    background:
+        repeating-linear-gradient(#535353, #535353 0.05vw, transparent 0.15vw, transparent 19.85vw, #535353 19.95vw, #535353 20vw),
+        repeating-linear-gradient(90deg, #535353, #535353 0.05vw, transparent 0.15vw, transparent 9.85vw, #535353 9.95vw, #535353 10vw),
+        #969591;
+    box-shadow:
+        inset 0 0 30vw 5vw #00000034,
+        inset 0 70vw 50vw -50vw #0000009a,
+        inset 0 30vw 30vw -30vw #000000;
     transform-origin: center center;
     transform-style: preserve-3d;
 }
 
 #left {
-    transform: rotateY(90deg) translateZ(-50vw);
+    mask-image:
+        linear-gradient(#000 40vw, transparent 40vw, transparent 60vw, #000 60vw),
+        linear-gradient(90deg, #000 50vw, transparent 50vw, transparent 60vw, #000 60vw);
+    -webkit-mask-image:
+        linear-gradient(#000 40vw, transparent 40vw, transparent 60vw, #000 60vw),
+        linear-gradient(90deg, #000 50vw, transparent 50vw, transparent 60vw, #000 60vw);
+    transform: translateX(-50vw) rotateY(90deg);
 }
 
 #right {
-    transform: rotateY(-90deg) translateZ(-50vw);
+    mask-image:
+        linear-gradient(#000 40vw, transparent 40vw, transparent 60vw, #000 60vw),
+        linear-gradient(90deg, #000 40vw, transparent 40vw, transparent 50vw, #000 50vw);
+    -webkit-mask-image:
+        linear-gradient(#000 40vw, transparent 40vw, transparent 60vw, #000 60vw),
+        linear-gradient(90deg, #000 40vw, transparent 40vw, transparent 50vw, #000 50vw);
+    transform: translateX(50vw) rotateY(-90deg);
 }
 
 #back {
+    left: -100vw;
+    width: 300vw;
     transform: translateZ(-50vw);
 }
 
 #ceil {
-    transform: rotateX(-90deg) translateZ(min(-50vw, -50vh)) translateY(min(calc(50vw - 50vh), 0vw));
+    background:
+        repeating-linear-gradient(90deg, transparent, #0000000a 0.5vw, transparent 1vw, transparent 2vw),
+        #333;
+    box-shadow: inset 0 0 8vw -3vw #000000a9;
+    transform: rotateX(-90deg) translateZ(-50vw);
 }
 
 #floor {
-    background: linear-gradient(90deg, transparent, #7f7c77 0.2vw, #666561 0.25vw, #7f7c77 0.3vw, transparent 0.5vw), linear-gradient(180deg, #aca9a3, #7f7c77 0.2vw, #666561 0.25vw, #7f7c77 0.3vw, #aca9a3 0.5vw);
-    background-size: 4.99vw 4.99vw;
-    background-position: -0.2vw -0.2vw;
+    background:
+        repeating-linear-gradient(90deg, #666561, #7f7c77 0.1vw, transparent 0.2vw, transparent 4.80vw, #7f7c77 4.9vw, #666561 5vw),
+        repeating-linear-gradient(180deg, #666561, #7f7c77 0.1vw, transparent 0.2vw, transparent 4.8vw, #7f7c77 4.9vw, #666561 5vw)
+        #8d8d8a;
     box-shadow: inset 0 0 30vw 5vw #0000005b;
-    transform: rotateX(90deg) translateZ(min(-50vw, -50vh)) translateY(max(calc(50vh - 50vw), 0vw));
+    transform: rotateX(90deg) translateZ(-50vw);
 }
 
 #l1 {
@@ -554,7 +706,8 @@ body {
     height: 10vw;
     bottom: 2vw;
     left: 2vw;
-    background: linear-gradient(#1c1c1c, #383838, #1c1c1c);
+    background: linear-gradient(90deg, #1c1c1c, #383838, #1c1c1c);
+    box-shadow: inset 0 5vw 5vw -5vw #000;
     transform: rotateX(90deg);
     transform-origin: bottom;
     transform-style: preserve-3d;
@@ -568,7 +721,8 @@ body {
     height: 10vw;
     bottom: 2vw;
     right: 2vw;
-    background: linear-gradient(#1c1c1c, #383838, #1c1c1c);
+    background: linear-gradient(90deg, #1c1c1c, #383838, #1c1c1c);
+    box-shadow: inset 0 5vw 5vw -5vw #000;
     transform: rotateX(90deg);
     transform-origin: bottom;
     transform-style: preserve-3d;
@@ -581,7 +735,7 @@ body {
     height: 1vw;
     top: -0.5vw;
     left: -0.5vw;
-    background: #636363;
+    background: linear-gradient(#454545, #5d5d5d);
     transform: translateZ(-0.9vw) rotateX(90deg);
     transform-origin: top;
     transform-style: preserve-3d;
@@ -595,7 +749,7 @@ body {
     height: 100%;
     top: 0;
     left: 0;
-    background: #636363;
+    background: linear-gradient(#3e3e3e, #5f5f5f);
     transform: rotateY(90deg) translateZ(20vw);
     transform-origin: left;
     transform-style: preserve-3d;
@@ -609,7 +763,7 @@ body {
     height: 100%;
     top: 0;
     right: 0;
-    background: #636363;
+    background: linear-gradient(#3e3e3e, #5f5f5f);
     transform: rotateY(-90deg) translateZ(20vw);
     transform-origin: right;
     transform-style: preserve-3d;
@@ -621,7 +775,8 @@ body {
     width: 20vw;
     height: 4vw;
     margin: -0.5vw;
-    background: #5b5b5b;
+    background: #3b3b3b;
+    box-shadow: inset 0 0 2vw 0 #ffffff36;
     transform: rotateY(180deg) translateZ(0.85vw);
     transform-origin: center center;
     transform-style: preserve-3d;
@@ -632,7 +787,8 @@ body {
     display: block;
     box-sizing: border-box;
     height: 6.5vw;
-    width: 101vw;
+    width: 301vw;
+    margin: -101vw;
     border: 0.5vw solid #787878;
     background: repeating-linear-gradient(90deg, #2b2b2b, #2b2b2b 0.2vw, #464646 0.5vw, #606060 1vw, #464646 1.5vw, #2b2b2b 1.9vw, #2b2b2b 2vw);
     box-shadow: inset 0 0.25vw 0.5vw 0 #000;
@@ -646,7 +802,7 @@ body {
     display: block;
     box-sizing: border-box;
     height: 7vw;
-    width: 100vw;
+    width: 300vw;
     bottom: calc(-0.5vw - 1px); /* make seam less obvious w/ 1px overlap */
     border: 0.5vw solid #505050;
     background: #4d4d4d;
@@ -662,7 +818,7 @@ body {
     display: block;
     box-sizing: border-box;
     height: 1.5vw;
-    width: 100vw;
+    width: 300vw;
     bottom: calc(1px - 0.5vw); /* make seam less obvious w/ 1px overlap */
     border: 0.3vw solid #646464;
     background: #5a5a5a;
@@ -676,9 +832,10 @@ body {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    height: calc(max(120vw, 120vh) + 1vw);
+    height: 121vw;
     width: 6.5vw;
     border: 0.5vw solid #787878;
+    background: #232323;
     box-shadow: inset 0 0.25vw 0.5vw 0 #000;
     transform-origin: center center;
     transform-style: preserve-3d;
@@ -689,9 +846,9 @@ body {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    height: max(100vw, 100vh);
+    height: 100vw;
     width: 1.5vw;
-    right: calc(1px - 0.5vw); /* make seam less obvious w/ 1px overlap */
+    right: calc(1px - 0.5vw);
     border: 0.3vw solid #646464;
     background: #5a5a5a;
     box-shadow: inset 0 1px 0.5vw 0 #00000062;
@@ -708,15 +865,120 @@ body {
     width: 6.5vw;
     top: -0.5vw;
     left: -0.5vw;
-    box-shadow: 0 0 3vw 0.5vw #00000082, inset 0 0 0 3vw #00000052;
+    box-shadow:
+        0 0 3vw 0.5vw #00000082,
+        inset 0 0 0 3vw #00000052;
     transform-origin: center center;
+    transform-style: preserve-3d;
+}
+
+.outlet {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    height: 7.5vw;
+    width: 6.5vw;
+    top: -4vw;
+    left: -0.5vw;
+    border: 0.5vw solid #6b6b6b;
+    box-shadow:
+        inset 0 6vw 6vw -6vw #000,
+        inset 0 6vw 6vw -6vw #2a2a2a,
+        inset 0 6vw 6vw -6vw #565656;
+    transform: rotateX(-90deg);
+    transform-origin: 0 6.5vw;
+    transform-style: preserve-3d;
+}
+
+.outlet::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2.5vw;
+    width: 6.5vw;
+    top: -3vw;
+    left: -0.5vw;
+    background: #777777;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    transform-style: preserve-3d;
+}
+
+.outlet::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 6.5vw;
+    width: 2.5vw;
+    top: -0.5vw;
+    right: -3vw;
+    background: #646464;
+    transform: rotateY(90deg);
+    transform-origin: left;
+    transform-style: preserve-3d;
+}
+
+.flap {
+    position: absolute;
+    display: block;
+    height: 2vw;
+    width: 100%;
+    top: 0;
+    background: repeating-linear-gradient(90deg, transparent 10%, #343434 10%, #343434 90%, transparent 90%, transparent 100%);
+    background-size: 20% 100%;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    animation: flap1 2.5s linear infinite;
+    will-change: transform;
+}
+
+.flap2 {
+    position: absolute;
+    display: block;
+    height: 2vw;
+    width: 100%;
+    top: 2vw;
+    background: repeating-linear-gradient(90deg, transparent 10%, #343434 10%, #343434 90%, transparent 90%, transparent 100%);
+    background-size: 20% 100%;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    animation: flap2 2.5s linear infinite;
+    will-change: transform;
+}
+
+.flap2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 2vw;
+    width: 100%;
+    top: 2vw;
+    background: repeating-linear-gradient(90deg, transparent 10%, #343434 10%, #343434 90%, transparent 90%, transparent 100%);
+    background-size: 20% 100%;
+    transform-origin: top;
+    transform-style: preserve-3d;
+    animation: flap3 2.5s linear infinite;
+    will-change: transform;
+}
+
+#conveyor2 .outlet::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 6.5vw;
+    width: 2.5vw;
+    top: -0.5vw;
+    left: -2.5vw;
+    background: #646464;
+    transform: rotateY(-90deg) rotateX(180deg);
+    transform-origin: right;
     transform-style: preserve-3d;
 }
 
 .belt {
     position: absolute;
     display: block;
-    height: calc(max(220vw, 220vh));
+    height: 240vw;
     width: 5.5vw;
     margin-top: -115vw;
     left: 0;
@@ -730,8 +992,6 @@ body {
         #232323;
     z-index: -10;
     background-size: 1vw 1vw;
-    transform-origin: center center;
-    transform-style: preserve-3d;
 }
 
 .cube-wrapper-x {
@@ -739,7 +999,7 @@ body {
     display: block;
     height: 5vw;
     width: 100%;
-    margin-top: -3.5vw;
+    margin-top: -3.75vw;
     transform-origin: center center;
     transform-style: preserve-3d;
 }
@@ -812,11 +1072,13 @@ body {
     width: 5.4vw;
     margin: -0.2vw;
     background: #ccc;
-    box-shadow: inset 0 0 0 0.2vw #d4d4d4, inset 0 0 1vw -0.5vw #0000001f;
-    -webkit-mask-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTEwMCwwVjMwaC0xMC43OTk5OWMtNC4yMTAwMi04LjI1LTEwLjk1MDAxLTE0Ljk4OTk5LTE5LjIwMDAxLTE5LjIwMDAxVjBoMzBaIi8+PHBhdGggZD0iTTMwLDBWMTAuNzk5OTljLTguMjUsNC4yMTAwMi0xNC45ODk5OSwxMC45NTAwMS0xOS4yMDAwMSwxOS4yMDAwMUgwVjBIMzBaIi8+PHBhdGggZD0iTTEwMCw3MHYzMGgtMzB2LTEwLjc5OTk5YzguMjUtNC4yMTAwMiwxNC45ODk5OS0xMC45NTAwMSwxOS4yMDAwMS0xOS4yMDAwMWgxMC43OTk5OVoiLz48cGF0aCBkPSJNMzAsODkuMjAwMDF2MTAuNzk5OTlIMHYtMzBIMTAuNzk5OTljNC4yMTAwMiw4LjI1LDEwLjk1MDAxLDE0Ljk4OTk5LDE5LjIwMDAxLDE5LjIwMDAxWiIvPjwvc3ZnPg==");
+    box-shadow:
+        inset 0 0 0 0.2vw #d4d4d4,
+        inset 0 0 1vw -0.5vw #0000001f;
     mask-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTEwMCwwVjMwaC0xMC43OTk5OWMtNC4yMTAwMi04LjI1LTEwLjk1MDAxLTE0Ljk4OTk5LTE5LjIwMDAxLTE5LjIwMDAxVjBoMzBaIi8+PHBhdGggZD0iTTMwLDBWMTAuNzk5OTljLTguMjUsNC4yMTAwMi0xNC45ODk5OSwxMC45NTAwMS0xOS4yMDAwMSwxOS4yMDAwMUgwVjBIMzBaIi8+PHBhdGggZD0iTTEwMCw3MHYzMGgtMzB2LTEwLjc5OTk5YzguMjUtNC4yMTAwMiwxNC45ODk5OS0xMC45NTAwMSwxOS4yMDAwMS0xOS4yMDAwMWgxMC43OTk5OVoiLz48cGF0aCBkPSJNMzAsODkuMjAwMDF2MTAuNzk5OTlIMHYtMzBIMTAuNzk5OTljNC4yMTAwMiw4LjI1LDEwLjk1MDAxLDE0Ljk4OTk5LDE5LjIwMDAxLDE5LjIwMDAxWiIvPjwvc3ZnPg==");
+    -webkit-mask-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZD0iTTEwMCwwVjMwaC0xMC43OTk5OWMtNC4yMTAwMi04LjI1LTEwLjk1MDAxLTE0Ljk4OTk5LTE5LjIwMDAxLTE5LjIwMDAxVjBoMzBaIi8+PHBhdGggZD0iTTMwLDBWMTAuNzk5OTljLTguMjUsNC4yMTAwMi0xNC45ODk5OSwxMC45NTAwMS0xOS4yMDAwMSwxOS4yMDAwMUgwVjBIMzBaIi8+PHBhdGggZD0iTTEwMCw3MHYzMGgtMzB2LTEwLjc5OTk5YzguMjUtNC4yMTAwMiwxNC45ODk5OS0xMC45NTAwMSwxOS4yMDAwMS0xOS4yMDAwMWgxMC43OTk5OVoiLz48cGF0aCBkPSJNMzAsODkuMjAwMDF2MTAuNzk5OTlIMHYtMzBIMTAuNzk5OTljNC4yMTAwMiw4LjI1LDEwLjk1MDAxLDE0Ljk4OTk5LDE5LjIwMDAxLDE5LjIwMDAxWiIvPjwvc3ZnPg==");
+    mask-size: 5.4vw 5.4vw; /* the above can be done with clip-path, but clip-path repaints every frame */
     -webkit-mask-size: 5.4vw 5.4vw;
-    mask-size: 5.4vw 5.4vw;
     transform: translateZ(0.2vw);
     transform-origin: center center;
     transform-style: preserve-3d;
@@ -832,7 +1094,7 @@ body {
     left: 1.8vw;
     border-radius: 50%;
     background: #ccc;
-    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDIwIiBoZWlnaHQ9IjE3NTUuMTY3OTIiIHZpZXdCb3g9IjAgMCAyMDIwIDE3NTUuMTY3OTIiPjxwYXRoIGQ9Ik0xMDExLjAzNTg3LDM3NS4xNjc5MmMtMjIuNjcyNDktNTQuODkyMDMtNjAuNDUzLTEyNi40MTUwMS0xMjQtMTk2LTI0LjEyNjcxLTI2LjQxOTE2LTYyLjE3MzIyLTY3LjQ2NTA3LTEyNC0xMDVDNjYwLjI1NDAxLDExLjc2OTIyLDU2NC4wNjY1MSwyLjk3NTQxLDUzOC4wMzU4NywxLjE2NzkyYy05NC40MTYzOC02LjU1NjAyLTE2NS41MzU2NCwxNi4zMjgyNS0xODUsMjMtMTAzLjIzNDM4LDM1LjM4NTM2LTE2NC44MjM3Myw5OC40OTYwMy0xOTIsMTI3LS4wMDAxMiwuMDAwMDYtOTIuNjQ2LDk3LjE3MjE4LTEzMSwyMzgtMTUuNTY4MzYsNTcuMTYzODgtMjMuMjI5MzcsMTI1LjM1NDc0LTI1LDE0MkMyLjY4OTkyLDU1My4yMjExNCwuMjQyOSw1NzYuODA0MTUsLjAzNTg3LDYwNy4xNjc5MmMtLjE5MDE5LDI3Ljg4OTI4LS4yMDg5OCw4MC40NDc5NCwxNiwxNDQsMCwuMDAwMTIsMjYuMTY2NSwxMDIuNTkzMzIsOTYsMTkzLDIyLjg1MjI5LDI5LjU4NDU5LDQ5LjEzNzQ1LDU2LjEyNDM5LDUyLDU5LDE5LjIwMjUxLDE5LjI4OTc5LDM0LjcxMjI4LDMyLjQyNzEyLDUyLDQ3LDM2LjA2OTQ2LDMwLjQwNTAzLDY2LjE5MDA2LDUyLjM5ODY4LDgxLDYzLDI2LjExMjE4LDE4LjY5MTc3LDI5LjcwMDA3LDE5LjkxNTUzLDEzMCw4NCwxNy4zMTMzNSwxMS4wNjIwMSw0OS4yOTAwNCwzMS41MjQ2Niw5MCw1OCw1My4wMDYzNSwzNC40NzIxNyw2NS42Nzk2OSw0My4yNzg5Myw3MSw0NywzOS42NDc3MSwyNy43Mjk4Niw2OC4wOTAwOSw1MC43OTE1LDg4LDY3LDE1LjgzNDk2LDEyLjg5MTExLDYzLjU4Mzc0LDUyLjIyMTU2LDEyMywxMTAsMjYuODYyMTgsMjYuMTIxODMsNTkuNzM2NTcsNTguMjQ0NTEsOTksMTA0LC4wMDAxMiwuMDAwMTIsMzEuNzU0NjQsMzcuMDA1MTMsNzAsOTIsNy4wNjEwNCwxMC4xNTMzMiwxNi44ODk3NywyNC42OTI2MywyNyw0NSw2Ljk2NTcsMTMuOTkxMjEsMTEuODAxODIsMjYuMTc0NjgsMTUsMzVoLS4wNzE3M2MzLjE5ODE4LTguODI1MzIsOC4wMzQzLTIxLjAwODc5LDE1LTM1LDEwLjExMDIzLTIwLjMwNzM3LDE5LjkzODk2LTM0Ljg0NjY4LDI3LTQ1LDM4LjI0NTM2LTU0Ljk5NDg3LDY5Ljk5OTg4LTkxLjk5OTg4LDcwLTkyLDM5LjI2MzQzLTQ1Ljc1NTQ5LDcyLjEzNzgyLTc3Ljg3ODE3LDk5LTEwNCw1OS40MTYyNi01Ny43Nzg0NCwxMDcuMTY1MDQtOTcuMTA4ODksMTIzLTExMCwxOS45MDk5MS0xNi4yMDg1LDQ4LjM1MjI5LTM5LjI3MDE0LDg4LTY3LDUuMzIwMzEtMy43MjEwNywxNy45OTM2NS0xMi41Mjc4Myw3MS00Nyw0MC43MDk5Ni0yNi40NzUzNCw3Mi42ODY2NS00Ni45Mzc5OSw5MC01OCwxMDAuMjk5OTMtNjQuMDg0NDcsMTAzLjg4NzgyLTY1LjMwODIzLDEzMC04NCwxNC44MDk5NC0xMC42MDEzMiw0NC45MzA1NC0zMi41OTQ5Nyw4MS02MywxNy4yODc3Mi0xNC41NzI4OCwzMi43OTc0OS0yNy43MTAyMSw1Mi00NywyLjg2MjU1LTIuODc1NjEsMjkuMTQ3NzEtMjkuNDE1NDEsNTItNTksNjkuODMzNS05MC40MDY2OCw5Ni0xOTIuOTk5ODgsOTYtMTkzLDE2LjIwODk4LTYzLjU1MjA2LDE2LjE5MDE5LTExNi4xMTA3MiwxNi0xNDQtLjIwNzAzLTMwLjM2Mzc3LTIuNjU0MDUtNTMuOTQ2NzgtNS03Ni0xLjc3MDYzLTE2LjY0NTI2LTkuNDMxNjQtODQuODM2MTItMjUtMTQyLTM4LjM1NC0xNDAuODI3ODItMTMwLjk5OTg4LTIzNy45OTk5NC0xMzEtMjM4LTI3LjE3NjI3LTI4LjUwMzk3LTg4Ljc2NTYyLTkxLjYxNDY0LTE5Mi0xMjctMTkuNDY0MzYtNi42NzE3NS05MC41ODM2Mi0yOS41NTYwMi0xODUtMjMtMjYuMDMwNjQsMS44MDc1LTEyMi4yMTgxNCwxMC42MDEzLTIyNSw3My02MS44MjY3OCwzNy41MzQ5My05OS44NzMyOSw3OC41ODA4NC0xMjQsMTA1LTYzLjU0Nyw2OS41ODQ5OS0xMDEuMzI3NTEsMTQxLjEwNzk3LTEyNCwxOTYiIGZpbGw9IiNjZmE2YjgiIC8+PC9zdmc+");
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJhIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDIwIiBoZWlnaHQ9IjE3NTUuMTY3OTIiIHZpZXdCb3g9IjAgMCAyMDIwIDE3NTUuMTY3OTIiPjxwYXRoIGQ9Ik0xMDExLjAzNTg3LDM3NS4xNjc5MmMtMjIuNjcyNDktNTQuODkyMDMtNjAuNDUzLTEyNi40MTUwMS0xMjQtMTk2LTI0LjEyNjcxLTI2LjQxOTE2LTYyLjE3MzIyLTY3LjQ2NTA3LTEyNC0xMDVDNjYwLjI1NDAxLDExLjc2OTIyLDU2NC4wNjY1MSwyLjk3NTQxLDUzOC4wMzU4NywxLjE2NzkyYy05NC40MTYzOC02LjU1NjAyLTE2NS41MzU2NCwxNi4zMjgyNS0xODUsMjMtMTAzLjIzNDM4LDM1LjM4NTM2LTE2NC44MjM3Myw5OC40OTYwMy0xOTIsMTI3LS4wMDAxMiwuMDAwMDYtOTIuNjQ2LDk3LjE3MjE4LTEzMSwyMzgtMTUuNTY4MzYsNTcuMTYzODgtMjMuMjI5MzcsMTI1LjM1NDc0LTI1LDE0MkMyLjY4OTkyLDU1My4yMjExNCwuMjQyOSw1NzYuODA0MTUsLjAzNTg3LDYwNy4xNjc5MmMtLjE5MDE5LDI3Ljg4OTI4LS4yMDg5OCw4MC40NDc5NCwxNiwxNDQsMCwuMDAwMTIsMjYuMTY2NSwxMDIuNTkzMzIsOTYsMTkzLDIyLjg1MjI5LDI5LjU4NDU5LDQ5LjEzNzQ1LDU2LjEyNDM5LDUyLDU5LDE5LjIwMjUxLDE5LjI4OTc5LDM0LjcxMjI4LDMyLjQyNzEyLDUyLDQ3LDM2LjA2OTQ2LDMwLjQwNTAzLDY2LjE5MDA2LDUyLjM5ODY4LDgxLDYzLDI2LjExMjE4LDE4LjY5MTc3LDI5LjcwMDA3LDE5LjkxNTUzLDEzMCw4NCwxNy4zMTMzNSwxMS4wNjIwMSw0OS4yOTAwNCwzMS41MjQ2Niw5MCw1OCw1My4wMDYzNSwzNC40NzIxNyw2NS42Nzk2OSw0My4yNzg5Myw3MSw0NywzOS42NDc3MSwyNy43Mjk4Niw2OC4wOTAwOSw1MC43OTE1LDg4LDY3LDE1LjgzNDk2LDEyLjg5MTExLDYzLjU4Mzc0LDUyLjIyMTU2LDEyMywxMTAsMjYuODYyMTgsMjYuMTIxODMsNTkuNzM2NTcsNTguMjQ0NTEsOTksMTA0LC4wMDAxMiwuMDAwMTIsMzEuNzU0NjQsMzcuMDA1MTMsNzAsOTIsNy4wNjEwNCwxMC4xNTMzMiwxNi44ODk3NywyNC42OTI2MywyNyw0NSw2Ljk2NTcsMTMuOTkxMjEsMTEuODAxODIsMjYuMTc0NjgsMTUsMzVoLS4wNzE3M2MzLjE5ODE4LTguODI1MzIsOC4wMzQzLTIxLjAwODc5LDE1LTM1LDEwLjExMDIzLTIwLjMwNzM3LDE5LjkzODk2LTM0Ljg0NjY4LDI3LTQ1LDM4LjI0NTM2LTU0Ljk5NDg3LDY5Ljk5OTg4LTkxLjk5OTg4LDcwLTkyLDM5LjI2MzQzLTQ1Ljc1NTQ5LDcyLjEzNzgyLTc3Ljg3ODE3LDk5LTEwNCw1OS40MTYyNi01Ny43Nzg0NCwxMDcuMTY1MDQtOTcuMTA4ODksMTIzLTExMCwxOS45MDk5MS0xNi4yMDg1LDQ4LjM1MjI5LTM5LjI3MDE0LDg4LTY3LDUuMzIwMzEtMy43MjEwNywxNy45OTM2NS0xMi41Mjc4Myw3MS00Nyw0MC43MDk5Ni0yNi40NzUzNCw3Mi42ODY2NS00Ni45Mzc5OSw5MC01OCwxMDAuMjk5OTMtNjQuMDg0NDcsMTAzLjg4NzgyLTY1LjMwODIzLDEzMC04NCwxNC44MDk5NC0xMC42MDEzMiw0NC45MzA1NC0zMi41OTQ5Nyw4MS02MywxNy4yODc3Mi0xNC41NzI4OCwzMi43OTc0OS0yNy43MTAyMSw1Mi00NywyLjg2MjU1LTIuODc1NjEsMjkuMTQ3NzEtMjkuNDE1NDEsNTItNTksNjkuODMzNS05MC40MDY2OCw5Ni0xOTIuOTk5ODgsOTYtMTkzLDE2LjIwODk4LTYzLjU1MjA2LDE2LjE5MDE5LTExNi4xMTA3MiwxNi0xNDQtLjIwNzAzLTMwLjM2Mzc3LTIuNjU0MDUtNTMuOTQ2NzgtNS03Ni0xLjc3MDYzLTE2LjY0NTI2LTkuNDMxNjQtODQuODM2MTItMjUtMTQyLTM4LjM1NC0xNDAuODI3ODItMTMwLjk5OTg4LTIzNy45OTk5NC0xMzEtMjM4LTI3LjE3NjI3LTI4LjUwMzk3LTg4Ljc2NTYyLTkxLjYxNDY0LTE5Mi0xMjctMTkuNDY0MzYtNi42NzE3NS05MC41ODM2Mi0yOS41NTYwMi0xODUtMjMtMjYuMDMwNjQsMS44MDc1LTEyMi4yMTgxNCwxMC42MDEzLTIyNSw3My02MS44MjY3OCwzNy41MzQ5My05OS44NzMyOSw3OC41ODA4NC0xMjQsMTA1LTYzLjU0Nyw2OS41ODQ5OS0xMDEuMzI3NTEsMTQxLjEwNzk3LTEyNCwxOTYiIGZpbGw9IiNjZmE2YjgiIC8+PC9zdmc+");
     background-size: 1vw 1vw;
     background-position: 0.2vw 0.3vw;
     background-repeat: no-repeat;
@@ -871,9 +1133,9 @@ body {
 }
 
 .roll {
-    left: -10vw; /* should be -7.5vw, but this looks smoother */
-    animation: roll 10s linear infinite;
-    will-change: transform;
+    left: -50vw;
+    animation: roll 20s linear infinite;
+    will-change: display, transform;
 }
 
 .slide {
@@ -882,83 +1144,232 @@ body {
     will-change: transform;
 }
 
-.d1 {
+.hide {
+    animation: tour-hide 30s ease-in-out 1 forwards;
+    will-change: display;
+}
+
+.d:nth-child(1) {
+    animation-delay: -17.5s;
+}
+
+.d:nth-child(2) {
+    animation-delay: -15s;
+}
+
+.d:nth-child(3) {
+    animation-delay: -12.5s;
+}
+
+.d:nth-child(4) {
+    animation-delay: -10s;
+}
+
+.d:nth-child(5) {
     animation-delay: -7.5s;
 }
 
-.d2 {
+.d:nth-child(6) {
     animation-delay: -5s;
 }
 
-.d3 {
+.d:nth-child(7) {
     animation-delay: -2.5s;
 }
 
-.d4 {
+.d:nth-child(8) {
     animation-delay: 0s;
 }
 
 
 @keyframes cycloid-bob {
     0% {
-        transform: translateY(0vw); /* -2.5(√2) * cos(0deg - 45deg) + 2.5 = 0 */
+        transform: translateZ(-5vw) translateY(0vw); /* -2.5(√2) * cos(0deg - 45deg) + 2.5 = 0 */
     }
     10% {
-        transform: translateY(-0.360vw); /* -2.5(√2) * cos(9deg - 45deg) + 2.5 =~ -0.360 */
+        transform: translateZ(-5vw) translateY(-0.360vw); /* -2.5(√2) * cos(9deg - 45deg) + 2.5 =~ -0.360 */
     }
     20% {
-        transform: translateY(-0.650vw); /* -2.5(√2) * cos(18deg - 45deg) + 2.5 =~ -0.650 */
+        transform: translateZ(-5vw) translateY(-0.650vw); /* -2.5(√2) * cos(18deg - 45deg) + 2.5 =~ -0.650 */
     }
     30% {
-        transform: translateY(-0.862vw); /* -2.5(√2) * cos(27deg - 45deg) + 2.5 =~ -0.862 */
+        transform: translateZ(-5vw) translateY(-0.862vw); /* -2.5(√2) * cos(27deg - 45deg) + 2.5 =~ -0.862 */
     }
     40% {
-        transform: translateY(-0.992vw); /* -2.5(√2) * cos(36deg - 45deg) + 2.5 =~ -0.992 */
+        transform: translateZ(-5vw) translateY(-0.992vw); /* -2.5(√2) * cos(36deg - 45deg) + 2.5 =~ -0.992 */
     }
     50% {
-        transform: translateY(-1.036vw); /* -2.5(√2) * cos(45deg - 45deg) + 2.5 =~ -1.036 */
+        transform: translateZ(-5vw) translateY(-1.036vw); /* -2.5(√2) * cos(45deg - 45deg) + 2.5 =~ -1.036 */
     }
     60% {
-        transform: translateY(-0.992vw); /* -2.5(√2) * cos(54deg - 45deg) + 2.5 =~ -0.992 */
+        transform: translateZ(-5vw) translateY(-0.992vw); /* -2.5(√2) * cos(54deg - 45deg) + 2.5 =~ -0.992 */
     }
     70% {
-        transform: translateY(-0.862vw); /* -2.5(√2) * cos(63deg - 45deg) + 2.5 =~ -0.862 */
+        transform: translateZ(-5vw) translateY(-0.862vw); /* -2.5(√2) * cos(63deg - 45deg) + 2.5 =~ -0.862 */
     }
     80% {
-        transform: translateY(-0.650vw); /* -2.5(√2) * cos(72deg - 45deg) + 2.5 =~ -0.650 */
+        transform: translateZ(-5vw) translateY(-0.650vw); /* -2.5(√2) * cos(72deg - 45deg) + 2.5 =~ -0.650 */
     }
     90% {
-        transform: translateY(-0.360vw); /* -2.5(√2) * cos(81deg - 45deg) + 2.5 =~ -0.360 */
+        transform: translateZ(-5vw) translateY(-0.360vw); /* -2.5(√2) * cos(81deg - 45deg) + 2.5 =~ -0.360 */
     }
     100% {
-        transform: translateY(0vw); /* -2.5(√2) * cos(90deg - 45deg) + 2.5 = 0 */
+        transform: translateZ(-5vw) translateY(0vw); /* -2.5(√2) * cos(90deg - 45deg) + 2.5 = 0 */
     }
 }
 
 @keyframes roll {
     0% {
+        display: none;
         transform: translateX(0) rotateZ(0deg);
     }
+    13% {
+        display: none;
+    }
+    14% {
+        display: block;
+    }
+    86% {
+        display: none;
+    }
     100% {
-        transform: translateX(calc(113.5vw)) rotateZ(1800deg);
+        display: none;
+        transform: translateX(200vw) rotateZ(3600deg);
     }
 }
 
 @keyframes slide {
     0% {
-        transform: translateY(0); /* should be 7.5vw, but this looks smoother */
+        transform: translateY(0);
     }
     100% {
         transform: translateY(113.5vw);
     }
 }
 
+@keyframes flap1 {
+    0% {
+        transform: rotateX(0deg);
+    }
+    26% {
+        transform: rotateX(0deg);
+    }
+    30% {
+        transform: rotateX(45deg);
+    }
+    33% {
+        transform: rotateX(65deg);
+    }
+    35% {
+        transform: rotateX(70deg);
+    }
+    58% {
+        transform: rotateX(70deg);
+    }
+    63% {
+        transform: rotateX(60deg);
+    }
+    75% {
+        transform: rotateX(-10deg);
+    }
+    84% {
+        transform: rotateX(7deg);
+    }
+    93% {
+        transform: rotateX(4deg);
+    }
+    97% {
+        transform: rotateX(0deg);
+    }
+    98% {
+        transform: rotateX(2deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes flap2 {
+    0% {
+        transform: rotateX(0deg);
+    }
+    26% {
+        transform: rotateX(0deg);
+    }
+    28% {
+        transform: rotateX(-9deg);
+    }
+    38% {
+        transform: rotateX(11deg);
+    }
+    58% {
+        transform: rotateX(11deg);
+    }
+    59% {
+        transform: rotateX(20deg);
+    }
+    65% {
+        transform: rotateX(30deg);
+    }
+    80% {
+        transform: rotateX(-10deg);
+    }
+    85% {
+        transform: rotateX(0deg);
+    }
+    92% {
+        transform: rotateX(5deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes flap3 {
+    0% {
+        transform: rotateX(0deg);
+    }
+    26% {
+        transform: rotateX(0deg);
+    }
+    32% {
+        transform: rotateX(-50deg);
+    }
+    40% {
+        transform: rotateX(10deg);
+    }
+    61% {
+        transform: rotateX(10deg);
+    }
+    65% {
+        transform: rotateX(18deg);
+    }
+    74% {
+        transform: rotateX(20deg);
+    }
+    80% {
+        transform: rotateX(-20deg);
+    }
+    85% {
+        transform: rotateX(0deg);
+    }
+    92% {
+        transform: rotateX(10deg);
+    }
+    99% {
+        transform: rotateX(-2deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
 @keyframes tour {
     0% {
-        transform: translateX(14.5vw) translateY(15vw) translateZ(65vw);
+        transform: translateX(14vw) translateY(10.25vw) translateZ(69.5vw);
     }
     5% {
-        transform: translateX(14.5vw) translateY(15vw) translateZ(65vw);
+        transform: translateX(14vw) translateY(10.25vw) translateZ(69.5vw);
     }
     25% {
         transform: rotateX(46deg) rotateY(-22.5deg);
@@ -973,18 +1384,90 @@ body {
         transform: translateZ(-10vw);
     }
     100% {
-        transform: translateX(14.5vw) translateY(15vw) translateZ(65vw);
+        transform: translateY(11vw) translateZ(-50vw);
     }
 }
 
-/* @keyframes tour {
+@keyframes tour-hide {
     0% {
-        transform: translateZ(0);
+        display: none;
     }
-    50% {
-        transform: rotateZ(360deg) rotateX(360deg);
+    4% {
+        display: none;
+    }
+    5% {
+        display: block;
+    }
+    55% {
+        display: none;
     }
     100% {
-        transform: rotateZ(0deg) rotateX(720deg);
+        display: none;
     }
-} */
+}
+
+@media (prefers-reduced-motion) {
+    #content {
+        animation: none !important;
+    }
+
+    .hide {
+        animation: tour-hide 30s ease-in-out 1;
+    }
+
+    .bob {
+        animation-duration: 1s !important;
+    }
+
+    .roll {
+        left: -50vw;
+        animation-duration: 40s !important;
+    }
+
+    .slide {
+        animation-duration: 20s !important;
+    }
+
+    .flap, .flap2, .flap2::after {
+        animation-duration: 5s !important;
+    }
+
+    .d:nth-child(1) {
+        animation-delay: -35s !important;
+    }
+
+    .d:nth-child(2) {
+        animation-delay: -30s !important;
+    }
+
+    .d:nth-child(3) {
+        animation-delay: -25s !important;
+    }
+
+    .d:nth-child(4) {
+        animation-delay: -20s !important;
+    }
+
+    .d:nth-child(5) {
+        animation-delay: -15s !important;
+    }
+
+    .d:nth-child(6) {
+        animation-delay: -10s !important;
+    }
+
+    .d:nth-child(7) {
+        animation-delay: -5s !important;
+    }
+
+    .d:nth-child(8) {
+        animation-delay: 0s !important;
+    }
+
+    #apsci-loc::after {
+        content: "MOTION REDUX";
+        display: block;
+        width: 100%;
+        margin-top: 1em;
+    }
+}
