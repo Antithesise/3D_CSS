@@ -123,6 +123,44 @@ body {
     pointer-events: none;
 }
 
+#dishwasher {
+    position: absolute;
+    display: block;
+    top: 36.1vh;
+    right: 1.5vh;
+    height: 13.5vh;
+    width: 14vh;
+    background: #fdf8f5;
+    box-shadow: inset 0 0 5vh -3vh black;
+    transform-style: preserve-3d;
+    transform: translateZ(16.5vh);
+}
+
+#dishwasher::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -3.1vh;
+    left: -0.5vh;
+    height: 17vh;
+    width: 2vh;
+    background: #c6c3b6;
+    transform-origin: left;
+    transform: translateZ(-1.5vh) rotateY(-90deg);
+}
+
+#dishwasher::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: -3vh;
+    right: 0;
+    height: 3vh;
+    width: 14.4vh;
+    background: #fffaf7;
+    box-shadow: inset 0 0 5vh -3vh black;
+}
+
 #window-wrapper {
     position: relative;
     display: block;
@@ -339,9 +377,11 @@ body {
     content: "";
     bottom: -19vh;
     left: -3vh;
-    height: 33vh;
-    width: 18vh;
-    background: #cac5b9;
+    height: 15vh;
+    width: 17vh;
+    border-top: 17vh solid #cac5b9;
+    border-bottom: 1vh solid #cac5b9;
+    border-left: 1vh solid #cac5b9;
     box-shadow: inset 1px 0 9px -9px black;
     transform-origin: left;
     transform-style: preserve-3d;
@@ -358,6 +398,44 @@ body {
     width: 17vh;
     background: #c6c3b6;
     transform-origin: bottom;
+    transform-style: preserve-3d;
+    transform: rotateX(90deg);
+}
+
+#sink {
+    position: absolute;
+    display: block;
+    height: 13vh;
+    width: 9vh;
+    background: #c6c3b6;
+    transform-style: preserve-3d;
+    transform: translateZ(-4vh);
+}
+
+#sink::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    right: 0;
+    height: 13vh;
+    width: 4vh;
+    background: #cac5b9;
+    transform-origin: right;
+    transform-style: preserve-3d;
+    transform: rotateY(90deg);
+}
+
+#sink::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 4vh;
+    width: 9vh;
+    background: #cfcabf;
+    transform-origin: top;
     transform-style: preserve-3d;
     transform: rotateX(90deg);
 }

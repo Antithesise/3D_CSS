@@ -373,9 +373,9 @@ body {
 }
 
 #photo-wrapper::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 0;
     left: 0;
     height: 0.5vh;
@@ -387,9 +387,9 @@ body {
 }
 
 #photo-wrapper::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 0;
     right: 0;
     height: 100%;
@@ -658,9 +658,9 @@ body {
 }
 
 #charger-cable::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     box-sizing: border-box;
     top: -0.5vh;
     left: 0vh;
@@ -674,9 +674,9 @@ body {
 }
 
 #charger-cable::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     bottom: 0;
     right: -0.3vh;
     height: 0.4vh;
@@ -807,9 +807,14 @@ body {
     border-radius: 0.4vh;
     background: #5c5c5b;
     box-shadow: inset 1px 1px 9px -9px white, inset -1px -1px 9px -9px black;
-    overflow: hidden;
+    /* overflow: hidden; */
     transform-origin: top;
     transform-style: preserve-3d;
+    transform: translateZ(0.3vh) rotateX(-1deg);
+    transition: transform 0.5s;
+}
+
+.check:checked + label #laptop-screen {
     transform: translateZ(0.3vh) rotateX(95deg);
 }
 
@@ -817,12 +822,13 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: 0.1vh;
-    left: calc(50% - 0.05vh);
-    height: 0.1vh;
-    width: 0.1vh;
-    border-radius: 50%;
-    background: #4a4a4b;
+    top: -0.5px;
+    left: calc(-12.31px / 17.42);
+    height: calc(7vh + 1px);
+    aspect-ratio: 12.31 / 8.71;
+    border-radius: 0.4vh;
+    background: radial-gradient(transparent, #b8b9be43), linear-gradient(#9b9da3, #b8b9be);
+    transform: translateZ(0.1px);
 }
 
 #laptop-screen::after {
@@ -837,19 +843,19 @@ body {
 }
 
 #laptop-screen-content {
-    position: relative;
+    position: absolute;
     display: block;
     top: 0.5vh;
+    left: 50%;
     width: 9.5vh;
     aspect-ratio: 759 / 491;
-    margin: 0 auto;
     padding: 0;
     border: none;
     background: #fffff0;
     pointer-events: none;
     transform-origin: center center;
     transform-style: preserve-3d;
-    transform: rotateX(180deg);
+    transform: rotateX(180deg) translateX(-50%);
 }
 
 #laptop-screen-content::selection {
@@ -878,9 +884,13 @@ body {
     left: -0.1vh; /* renders to the right for some reason */
     height: 2vh;
     width: 2vh;
+    padding: 0.6vh;
+    padding-top: 0.5vh;
     background: #ebe5da;
+    box-sizing: border-box;
     box-shadow: inset 0.6vh 0 9px -9px #ffffff, inset -0.6vh 0 9px -9px rgba(0, 0, 0, 0.5);
-    transform-style: preserve-3d;
+    font-size: 0.5vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transform-origin: top;
     transform: rotateX(-90deg) rotateY(-45deg);
 }
@@ -896,9 +906,12 @@ body {
     border-radius: 50%;
     background: #ebe5da;
     box-shadow: 0 0.2vh 9px -5px black, inset 0.6vh 0 9px -9px #ffffff, inset -0.6vh 0 9px -9px rgba(0, 0, 0, 0.5);
-    transform-style: preserve-3d;
     transform-origin: center center;
     transform: translateZ(-2vh) rotateZ(45deg);
+}
+
+.check:checked + #cup::before {
+    content: "I \2764 CSS";
 }
 
 #pot {
@@ -916,9 +929,9 @@ body {
 }
 
 #pot::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 2.5vh;
     left: 0;
     height: 0;
@@ -932,9 +945,9 @@ body {
 }
 
 #pot::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 1vh;
     left: 1vh;
     height: 3vh;
@@ -958,13 +971,14 @@ body {
     transform-style: preserve-3d;
     transform-origin: top;
     transform: translateZ(4vh) rotateX(-90deg) rotateY(-45deg);
+    transition: transform ease-in-out 1s;
 }
 
 #plant::before {
     position: absolute;
     display: block;
     content: "";
-    bottom: -4.24vh;
+    bottom: -4.2vh;
     left: -0.24vh;
     height: 0.48vh;
     width: 0.48vh;
@@ -973,6 +987,10 @@ body {
     transform-style: preserve-3d;
     transform-origin: center center;
     transform: rotateX(90deg) rotateZ(45deg);
+}
+
+.check:checked + label #plant {
+    transform: scale3d(200%, 200%, 200%) translateZ(4vh) rotateX(-90deg) rotateY(-45deg);
 }
 
 .leaf {
@@ -989,6 +1007,11 @@ body {
     width: 1.5vh;
     transform-origin: top left;
     transform: rotateX(-30deg);
+    transition: transform ease-in-out 1s;
+}
+
+.check:checked + label #ltop {
+    transform: scale(80%) rotateX(-12deg);
 }
 
 #lmid {
@@ -998,6 +1021,11 @@ body {
     width: 1.7vh;
     transform-origin: top left;
     transform: rotateY(130deg) rotateX(-45deg);
+    transition: transform ease-in-out 1s;
+}
+
+.check:checked + label #lmid {
+    transform: scale(80%) translateY(0.3vh) rotateY(120deg) rotateX(-34deg);
 }
 
 #lbase {
@@ -1007,6 +1035,11 @@ body {
     width: 1.8vh;
     transform-origin: top left;
     transform: rotateY(70deg) rotateX(45deg);
+    transition: transform ease-in-out 1s;
+}
+
+.check:checked + label #lbase {
+    transform: scale(80%) translateY(0.6vh) rotateY(75deg) rotateX(37deg);
 }
 
 #chair-wrapper {
@@ -1016,20 +1049,40 @@ body {
     left: 20vh;
     height: 13vh;
     width: 13vh;
-    border-radius: 3vh;
-    background: #c1c4c4;
     transform-style: preserve-3d;
 }
 
 #chair-wrapper::before {
-    content: "";
     position: absolute;
     display: block;
-    bottom: -3vh;
+    content: "";
+    top: 6.5vh;
     left: 5.5vh;
-    height: 3vh;
+    height: 9.5vh;
     width: 2vh;
     background: #c1c4c4;
+    transform-origin: top;
+    transition: transform ease 3s;
+}
+
+#chair-wrapper::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 13vh;
+    width: 13vh;
+    border-radius: 3vh;
+    background: #c1c4c4;
+    transform-style: preserve-3d;
+    transition: transform ease 3s;
+}
+
+.check:checked + #chair-wrapper::before {
+    transform: rotateZ(900deg);
+}
+
+.check:checked + #chair-wrapper::after {
+    transform: rotateZ(900deg);
 }
 
 #chair-base {
@@ -1044,9 +1097,9 @@ body {
 }
 
 #chair-base::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 6.5vh;
     left: 5.75vh;
     height: 4vh;
@@ -1058,9 +1111,9 @@ body {
 }
 
 #chair-base::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 5.75vh;
     left: 5.75vh;
     height: 1.5vh;
@@ -1085,9 +1138,9 @@ body {
 }
 
 .chair-leg::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 0;
     left: 0;
     height: 6.5vh;
@@ -1107,9 +1160,9 @@ body {
 }
 
 .chair-leg::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 0.5vh;
     height: 5.25vh;
     width: 0.5vh;
@@ -1148,9 +1201,9 @@ body {
 }
 
 .chair-wheel-cover {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     bottom: 0.75vh;
     height: 0.5vh;
     width: 1.5vh;
@@ -1182,9 +1235,9 @@ body {
 }
 
 .chair-wheel::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     height: 1vh;
     width: 1vh;
     border-radius: 50%;
@@ -1205,16 +1258,17 @@ body {
     left: 1.5vh;
     border-radius: 3vh;
     background: #9f9c97;
-    box-shadow: inset 0 -3vh 4vh 1vh #c3bcb8;
+    box-shadow: inset 0 0 4vh 1vh #c3bcb8;
     transform-style: preserve-3d;
     transform-origin: center center;
     transform: translateZ(10vh);
+    transition: transform ease 3s;
 }
 
 #chair-seat::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 5.5vh;
     left: 4.35vh;
     height: 4.45vh;
@@ -1222,12 +1276,13 @@ body {
     background: linear-gradient(to top, #433f3c, 15%, #4c4947);
     transform-origin: top;
     transform: rotateZ(45deg) rotateX(-90deg) translateZ(0.1vh);
+    transition: transform ease 3s;
 }
 
 #chair-seat::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 4.75vh;
     left: 4.25vh;
     height: 1.5vh;
@@ -1235,6 +1290,14 @@ body {
     border-radius: 50%;
     background: radial-gradient(#433f3c, 90%, #4c4947);
     transform: translateZ(-4.5vh);
+}
+
+.check:checked + label #chair-seat {
+    transform: translateZ(10vh) rotateZ(900deg);
+}
+
+.check:checked + label #chair-seat::before {
+    transform: rotateZ(-855deg) rotateX(-90deg) translateZ(0.1vh);
 }
 
 #chair-bend-1 {
@@ -1253,9 +1316,9 @@ body {
 }
 
 #chair-bend-1::before {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     top: 0;
     left: 0;
     height: 5.5vh;
@@ -1266,9 +1329,9 @@ body {
 }
 
 #chair-bend-1::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     bottom: -0.75vh;
     left: 0;
     height: 1vh;
@@ -1294,9 +1357,9 @@ body {
 }
 
 #chair-bend-2::after {
-    content: "";
     position: absolute;
     display: block;
+    content: "";
     bottom: -0.75vh;
     right: 0;
     height: 0.75vh;
@@ -1320,8 +1383,40 @@ body {
     transform: translateZ(2vh) rotateX(-90deg);
 }
 
+#chair-back::before {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 3.3vh;
+    left: 4.5vh;
+    height: 7vh;
+    width: 1vh;
+    background: linear-gradient(90deg, #44413f, 25%, #4c4947, 75%, #44413f);
+    /* backface-visibility: hidden; */
+    transform: translateZ(0.72vh) rotateY(180deg);
+}
+
+#chair-back::after {
+    position: absolute;
+    display: block;
+    content: "";
+    height: 8vh;
+    width: 10vh;
+    bottom: 0;
+    border-radius: 3vh;
+    background: #93918d;
+    backface-visibility: hidden;
+    box-shadow: inset 0 0 4vh 1vh #b1aba7;
+    transform-origin: center center;
+    transform: rotateY(180deg);
+}
+
 .check {
     display: none;
+}
+
+.check + label {
+    cursor: pointer;
 }
 
 .check:checked + label .point {
@@ -1337,6 +1432,7 @@ body {
     border: 0.5vh solid rgba(0, 0, 0, 0.3);
     background-color: black;
     background-clip: padding-box;
+    cursor: pointer;
     transform-style: preserve-3d;
     transform-origin: center center;
     animation: blink 3s infinite;
