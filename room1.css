@@ -1,12 +1,13 @@
 :root, * {
-    font-size: 5vh;
+    font-size: 1vh; /* global zoom */
     shape-rendering: geometricPrecision;
     image-rendering: crisp-edges;
 }
 
 body {
     background: #fffff0;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 #wrapper {
@@ -24,26 +25,26 @@ body {
 #left {
     position: absolute;
     display: block;
-    top: 25vh;
-    left: calc(50vw - 25vh);
-    height: 50vh;
-    width: 50vh;
+    top: 25rem;
+    left: calc(50vw - 25rem);
+    height: 50rem;
+    width: 50rem;
     transform-style: preserve-3d;
-    transform: translateZ(-25vh);
+    transform: translateZ(-25rem);
 }
 
 #left::before {
     position: absolute;
     display: block;
     content: "";
-    top: -2vh;
+    top: -2rem;
     left: 0;
-    height: 2vh;
-    width: calc(100% + 2vh);
+    height: 2rem;
+    width: calc(100% + 2rem);
     background: #f2ede9;
     transform-origin: bottom;
     transform-style: preserve-3d;
-    transform: translateZ(-2vh) rotateX(-90deg);
+    transform: translateZ(-2rem) rotateX(-90deg);
 }
 
 #left::after {
@@ -52,8 +53,8 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: calc(100% + 2vh);
-    width: 2vh;
+    height: calc(100% + 2rem);
+    width: 2rem;
     background: #f2ede9;
     transform-origin: left;
     transform-style: preserve-3d;
@@ -63,21 +64,21 @@ body {
 #desk-shadow-left1 {
     position: absolute;
     display: block;
-    bottom: -0.1vh;
-    left: 3vh;
-    height: 18vh;
-    width: 47vh;
+    bottom: -0.1rem;
+    left: 3rem;
+    height: 18rem;
+    width: 47rem;
     background: #f2ebe6;
 }
 
 #desk-shadow-left2 {
     position: absolute;
     display: block;
-    bottom: -0.1vh;
+    bottom: -0.1rem;
     left: 0;
-    height: 12vh;
-    border-top: 6vh solid transparent;
-    border-right: 3vh solid #f2ebe6;
+    height: 12rem;
+    border-top: 6rem solid transparent;
+    border-right: 3rem solid #f2ebe6;
 }
 
 #left-shadow {
@@ -85,8 +86,8 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 50vh;
-    width: 50vh;
+    height: 50rem;
+    width: 50rem;
     box-shadow: inset -1px -1px 9px -8px black;
     pointer-events: none;
 }
@@ -96,8 +97,8 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 50vh;
-    width: 50vh;
+    height: 50rem;
+    width: 50rem;
     transform-style: preserve-3d;
     z-index: -1;
 }
@@ -107,12 +108,12 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 20vh;
-    width: 35vh;
-    border-top: 10vh solid #f8f2ed;
-    border-bottom: 20vh solid #f8f2ed;
-    border-left: 5vh solid #f8f2ed;
-    border-right: 10vh solid #f8f2ed;
+    height: 20rem;
+    width: 35rem;
+    border-top: 10rem solid #f8f2ed;
+    border-bottom: 20rem solid #f8f2ed;
+    border-left: 5rem solid #f8f2ed;
+    border-right: 10rem solid #f8f2ed;
     overflow: visible;
     transform-style: preserve-3d;
 }
@@ -123,13 +124,13 @@ body {
     content: "";
     bottom: 0;
     right: 0;
-    height: 2vh;
-    width: calc(100% + 2vh);
+    height: 2rem;
+    width: calc(100% + 2rem);
     background: #f2ede9;
     box-shadow: inset 0 0 9px -9px black;
     transform-origin: bottom;
     transform-style: preserve-3d;
-    transform: translateZ(-2vh) rotateX(-90deg);
+    transform: translateZ(-2rem) rotateX(-90deg);
 }
 
 #window::after {
@@ -138,13 +139,13 @@ body {
     content: "";
     bottom: 0;
     right: 0;
-    height: calc(100% + 2vh);
-    width: 2vh;
+    height: calc(100% + 2rem);
+    width: 2rem;
     background: #f2ede9;
     box-shadow: inset 0 0 9px -9px black;
     transform-origin: right;
     transform-style: preserve-3d;
-    transform: translateZ(-2vh) rotateY(90deg);
+    transform: translateZ(-2rem) rotateY(90deg);
 }
 
 #window-shadow {
@@ -152,8 +153,8 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 20vh;
-    width: 35vh;
+    height: 20rem;
+    width: 35rem;
     box-shadow: 1px 1px 9px -9px black;
     pointer-events: none;
     transform-style: preserve-3d;
@@ -165,13 +166,13 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 20vh;
-    width: 35vh;
+    height: 20rem;
+    width: 35rem;
     border: 1px solid rgba(73, 73, 73, 0.2);
     background: rgba(213, 213, 213, 0.2);
     box-sizing: border-box;
     transform-style: preserve-3d;
-    transform: translateZ(-1.2vh);
+    transform: translateZ(-1.2rem);
 }
 
 #window-shadow::after {
@@ -180,22 +181,22 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 20vh;
-    width: 35vh;
+    height: 20rem;
+    width: 35rem;
     border: 1px solid rgba(73, 73, 73, 0.1);
     background: rgba(213, 213, 213, 0.2);
     box-sizing: border-box;
     transform-style: preserve-3d;
-    transform: translateZ(-0.8vh);
+    transform: translateZ(-0.8rem);
 }
 
 #right {
     position: absolute;
     display: block;
-    top: 25vh;
+    top: 25rem;
     left: 50vw;
-    height: 50vh;
-    width: 50vh;
+    height: 50rem;
+    width: 50rem;
     background: #fdf8f5;
     transform-origin: center center;
     transform-style: preserve-3d;
@@ -206,14 +207,14 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: -2vh;
-    left: -2vh;
-    height: 2vh;
-    width: calc(100% + 2vh);
+    top: -2rem;
+    left: -2rem;
+    height: 2rem;
+    width: calc(100% + 2rem);
     background: #f2ede9;
     transform-origin: bottom;
     transform-style: preserve-3d;
-    transform: translateZ(-2vh) rotateX(-90deg);
+    transform: translateZ(-2rem) rotateX(-90deg);
 }
 
 #right::after {
@@ -222,8 +223,8 @@ body {
     content: "";
     top: 0;
     right: 0;
-    height: calc(100% + 2vh);
-    width: 2vh;
+    height: calc(100% + 2rem);
+    width: 2rem;
     background: #f2ede9;
     transform-origin: right;
     transform-style: preserve-3d;
@@ -233,65 +234,65 @@ body {
 #shelf-shadow-right1 {
     position: absolute;
     display: block;
-    top: 13vh;
-    right: 31vh;
+    top: 13rem;
+    right: 31rem;
     height: 0;
     width: 0;
-    border-bottom: 7vh solid #f8f2ed;
-    border-left: calc(42vh / 13) solid transparent;
+    border-bottom: 7rem solid #f8f2ed;
+    border-left: calc(42rem / 13) solid transparent;
 }
 
 #shelf-shadow-right2 {
     position: absolute;
     display: block;
-    top: 13vh;
+    top: 13rem;
     right: 0;
     height: 0;
     width: 0;
-    border-bottom: calc(13vh / 49) solid #f2ebe6;
-    border-right: 1vh solid transparent;
+    border-bottom: calc(13rem / 49) solid #f2ebe6;
+    border-right: 1rem solid transparent;
 }
 
 #shelf-shadow-right3 {
     position: absolute;
     display: block;
-    top: calc(650vh / 49);
-    left: 19vh;
-    height: calc(330vh / 49);
-    width: 31.05vh; /* add .05 because there is a gap otherwise (?) */
+    top: calc(650rem / 49);
+    left: 19rem;
+    height: calc(330rem / 49);
+    width: 31.05rem; /* add .05 because there is a gap otherwise (?) */
     background: #f8f2ed;
 }
 
 #shelf-shadow-right4 {
     position: absolute;
     display: block;
-    top: 13vh;
+    top: 13rem;
     right: 0;
     height: 0;
     width: 0;
-    border-top: calc(31vh / 9) solid #f2ebe6;
-    border-left: 31vh solid transparent;
+    border-top: calc(31rem / 9) solid #f2ebe6;
+    border-left: 31rem solid transparent;
 }
 
 #shelf-shadow-right5 {
     position: absolute;
     display: block;
-    top: 13vh;
+    top: 13rem;
     right: 0;
-    height: 1vh;
+    height: 1rem;
     width: 0;
-    border-top: calc(1vh / 9) solid #fdf8f5;
-    border-left: 1vh solid transparent;
+    border-top: calc(1rem / 9) solid #fdf8f5;
+    border-left: 1rem solid transparent;
 }
 
 #desk-shadow-right1 {
     position: absolute;
     display: block;
-    bottom: -0.1vh;
+    bottom: -0.1rem;
     left: 0;
-    width: 14vh;
-    border-top: 16.6vh solid #f2ebe6;
-    border-right: 4vh solid #f8f2ed;
+    width: 14rem;
+    border-top: 16.6rem solid #f2ebe6;
+    border-right: 4rem solid #f8f2ed;
 }
 
 #desk-shadow-right2 {
@@ -299,10 +300,10 @@ body {
     display: block;
     bottom: 0;
     right: 0;
-    height: calc(130vh / 9);
+    height: calc(130rem / 9);
     width: 0;
-    border-top: calc(32vh / 9) solid transparent;
-    border-left: 32.2vh solid #f8f2ed;
+    border-top: calc(32rem / 9) solid transparent;
+    border-left: 32.2rem solid #f8f2ed;
 }
 
 #right-shadow {
@@ -310,8 +311,8 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 50vh;
-    width: 50vh;
+    height: 50rem;
+    width: 50rem;
     box-shadow: inset 1px -1px 9px -8px black;
     pointer-events: none;
 }
@@ -319,10 +320,10 @@ body {
 #shelf {
     position: absolute;
     display: block;
-    top: 13vh;
-    right: 1vh;
-    height: 10vh;
-    width: 30vh;
+    top: 13rem;
+    right: 1rem;
+    height: 10rem;
+    width: 30rem;
     background: #efe8e4;
     box-shadow: inset -1px 0px 9px -9px black;
     transform-style: preserve-3d;
@@ -336,8 +337,8 @@ body {
     content: "";
     top: 0;
     right: 0;
-    height: 10vh;
-    width: 1vh;
+    height: 10rem;
+    width: 1rem;
     background: #ece3dd;
     transform-style: preserve-3d;
     transform-origin: right;
@@ -348,10 +349,10 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: -1vh;
+    bottom: -1rem;
     right: 0;
-    height: 1vh;
-    width: 30vh;
+    height: 1rem;
+    width: 30rem;
     background: #f6eeea;
     transform-style: preserve-3d;
     transform-origin: top;
@@ -361,15 +362,15 @@ body {
 #photo-wrapper {
     position: absolute;
     display: block;
-    top: 2vh;
-    left: 3vh;
-    height: 6vh;
-    width: 8vh;
-    box-shadow: inset 0 0 0 0.75vh #c7baa1;
+    top: 2rem;
+    left: 3rem;
+    height: 6rem;
+    width: 8rem;
+    box-shadow: inset 0 0 0 0.75rem #c7baa1;
     background: white;
     transform-style: preserve-3d;
     transform-origin: bottom;
-    transform: translateZ(0.25651510749425154978vh) rotateZ(-15deg) rotateX(-70deg); /* sin(20) * 0.75vh */
+    transform: translateZ(0.25651510749425154978rem) rotateZ(-15deg) rotateX(-70deg); /* sin(20) * 0.75rem */
 }
 
 #photo-wrapper::before {
@@ -378,7 +379,7 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 0.5vh;
+    height: 0.5rem;
     width: 100%;
     background: #dcd0b9;
     transform-style: preserve-3d;
@@ -393,7 +394,7 @@ body {
     top: 0;
     right: 0;
     height: 100%;
-    width: 0.5vh;
+    width: 0.5rem;
     background: #a69d8c;
     transform-style: preserve-3d;
     transform-origin: right;
@@ -403,10 +404,10 @@ body {
 #photo {
     position: relative;
     display: block;
-    margin: 1.5vh auto;
+    margin: 1.5rem auto;
     height: 50%;
     aspect-ratio: 3 / 2;
-    box-shadow: 9 9 9 0.1vh #000;
+    box-shadow: 9 9 9 0.1rem #000;
 }
 
 #photo-shadow-bottom1 {
@@ -419,16 +420,16 @@ body {
     background: #e1dad3;
     transform-style: preserve-3d;
     transform-origin: bottom;
-    transform: rotateX(70deg) translateZ(-0.25651510749425154978vh) translateY(-0.70476946558943128804vh); /* cos(20) * 0.75vh */
+    transform: rotateX(70deg) translateZ(-0.25651510749425154978rem) translateY(-0.70476946558943128804rem); /* cos(20) * 0.75rem */
 }
 
 #floor {
     position: absolute;
     display: block;
-    top: 50vh;
-    left: calc(50vw - 25vh);
-    height: 50vh;
-    width: 50vh;
+    top: 50rem;
+    left: calc(50vw - 25rem);
+    height: 50rem;
+    width: 50rem;
     background: #d3d3d3;
     box-shadow: inset -1px 1px 9px -8px black;
     transform-origin: center center;
@@ -442,8 +443,8 @@ body {
     content: "";
     bottom: 0;
     left: 0;
-    height: 2vh;
-    width: calc(100% + 2vh);
+    height: 2rem;
+    width: calc(100% + 2rem);
     background: #f2ede9;
     transform-origin: bottom;
     transform-style: preserve-3d;
@@ -454,10 +455,10 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: -2vh;
-    left: -2vh;
-    height: calc(100% + 2vh);
-    width: 2vh;
+    top: -2rem;
+    left: -2rem;
+    height: calc(100% + 2rem);
+    width: 2rem;
     background: #f2ede9;
     transform-origin: right;
     transform-style: preserve-3d;
@@ -467,21 +468,21 @@ body {
 #desk-shadow-floor1 {
     position: absolute;
     display: block;
-    top: -0.1vh;
-    left: 3vh;
-    height: 14.1vh;
-    width: 47vh;
+    top: -0.1rem;
+    left: 3rem;
+    height: 14.1rem;
+    width: 47rem;
     background: #c1c4c4;
 }
 
 #desk-shadow-floor2 {
     position: absolute;
     display: block;
-    top: -0.1vh;
+    top: -0.1rem;
     left: 0;
-    height: 14vh;
-    border-bottom: 4vh solid transparent;
-    border-right: 3vh solid #c1c4c4;
+    height: 14rem;
+    border-bottom: 4rem solid transparent;
+    border-right: 3rem solid #c1c4c4;
 }
 
 #floor-shadow {
@@ -489,8 +490,8 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 50vh;
-    width: 50vh;
+    height: 50rem;
+    width: 50rem;
     box-shadow: inset -1px 1px 9px -8px black;
     pointer-events: none;
 }
@@ -501,12 +502,12 @@ body {
     box-sizing: border-box;
     top: 0;
     right: 0;
-    height: 18vh;
-    width: 47vh;
+    height: 18rem;
+    width: 47rem;
     background: #dddbd4;
     box-shadow: inset 1px 0 9px -9px black;
     transform-style: preserve-3d;
-    transform: translateZ(18vh);
+    transform: translateZ(18rem);
 }
 
 #desk::before {
@@ -515,8 +516,8 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 18vh;
-    width: 18vh;
+    height: 18rem;
+    width: 18rem;
     background: #c6c3b6;
     box-shadow: inset 1px 0 9px -9px black;
     transform-origin: left;
@@ -530,10 +531,10 @@ body {
     content: "";
     bottom: 0;
     left: 0;
-    height: 16.5vh;
-    width: 47vh;
-    border-bottom: 1.5vh solid #d3cfc5;
-    border-left: 1.5vh solid #d3cfc5;
+    height: 16.5rem;
+    width: 47rem;
+    border-bottom: 1.5rem solid #d3cfc5;
+    border-left: 1.5rem solid #d3cfc5;
     transform-origin: bottom;
     transform-style: preserve-3d;
     transform: rotateX(90deg);
@@ -542,12 +543,12 @@ body {
 #gromit {
     position: absolute;
     display: block;
-    top: 1.5vh;
-    left: 7vh;
-    height: 1.2vh;
-    width: 1.2vh;
+    top: 1.5rem;
+    left: 7rem;
+    height: 1.2rem;
+    width: 1.2rem;
     border-radius: 50%;
-    border: 0.4vh solid #c6c3b6;
+    border: 0.4rem solid #c6c3b6;
     background: #87857b;
     transform-style: preserve-3d;
 }
@@ -556,43 +557,43 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: -0.2vh;
-    left: -0.2vh;
-    height: 1.2vh;
-    width: 1.2vh;
+    top: -0.2rem;
+    left: -0.2rem;
+    height: 1.2rem;
+    width: 1.2rem;
     border-radius: 50%;
-    border: 0.3vh solid #c6c3b6;
+    border: 0.3rem solid #c6c3b6;
     background: transparent;
     box-sizing: content-box;
     box-shadow: inset 0 0 2px 1px #6b695f;
     transform-style: preserve-3d;
-    transform: translateZ(0.05vh);
+    transform: translateZ(0.05rem);
 }
 
 #pencil {
     position: absolute;
     display: block;
-    top: 10vh;
-    left: 16vh;
-    height: 0.1vh;
-    width: 3vh;
-    border-left: 0.1vh solid #c3b687;
+    top: 10rem;
+    left: 16rem;
+    height: 0.1rem;
+    width: 3rem;
+    border-left: 0.1rem solid #c3b687;
     background: #5e5e92;
     box-shadow: inset 0 0 0 0.02px white;
     transform-style: preserve-3d;
     transform-origin: bottom left;
-    transform: translateZ(0.14422495703vh) rotateZ(78deg) rotateX(-60deg); /* cube root of 3 * 0.1 (i.e, twice the height of an equilateral tri. with side = 0.1) */
+    transform: translateZ(0.14422495703rem) rotateZ(78deg) rotateX(-60deg); /* cube root of 3 * 0.1 (i.e, twice the height of an equilateral tri. with side = 0.1) */
 }
 
 #pencil::before {
     position: absolute;
     display: block;
     content: "";
-    top: -0.1vh;
-    left: -0.1vh;
-    height: 0.1vh;
-    width: 3vh;
-    border-left: 0.1vh solid #e9dba9;
+    top: -0.1rem;
+    left: -0.1rem;
+    height: 0.1rem;
+    width: 3rem;
+    border-left: 0.1rem solid #e9dba9;
     background: #9b9bdc;
     box-shadow: inset 0 0 0 0.02px white;
     transform-style: preserve-3d;
@@ -604,11 +605,11 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: -0.1vh;
-    left: -0.1vh;
-    height: 0.1vh;
-    width: 3vh;
-    border-left: 0.1vh solid #beaa61;
+    bottom: -0.1rem;
+    left: -0.1rem;
+    height: 0.1rem;
+    width: 3rem;
+    border-left: 0.1rem solid #beaa61;
     background: #55557a;
     box-shadow: inset 0 0 0 0.01px rgba(255, 255, 255, 0.3);
     transform-style: preserve-3d;
@@ -620,41 +621,41 @@ body {
     position: absolute;
     display: block;
     top: 0;
-    right: -0.15vh;
-    border-top: 0.05vh solid transparent;
-    border-bottom: 0.05vh solid transparent;
-    border-left: 0.15vh solid #947054;
+    right: -0.15rem;
+    border-top: 0.05rem solid transparent;
+    border-bottom: 0.05rem solid transparent;
+    border-left: 0.15rem solid #947054;
     transform-style: preserve-3d;
     transform-origin: left;
-    transform: translateY(-0.05vh) translateZ(-0.07211247851vh) scaleX(2.5); /* cube root of 3 * 0.05 (i.e, the height of an equilateral tri. with side = 0.1) */
+    transform: translateY(-0.05rem) translateZ(-0.07211247851rem) scaleX(2.5); /* cube root of 3 * 0.05 (i.e, the height of an equilateral tri. with side = 0.1) */
 }
 
 #pencil-head::before {
     position: absolute;
     display: block;
     content: "";
-    top: -0.1vh;
-    left: -1.3vh;
-    height: 0.2vh;
-    width: 1.2vh;
+    top: -0.1rem;
+    left: -1.3rem;
+    height: 0.2rem;
+    width: 1.2rem;
     background: #947054;
-    transform: translateX(0.001vh);
+    transform: translateX(0.001rem);
 }
 
 #charger-cable {
     position: absolute;
     display: block;
     box-sizing: border-box;
-    top: 2.1vh;
-    left: 8.2vh;
-    height: 6.4vh;
-    width: 21vh;
-    border-top: 0.5vh solid #61615e;
-    border-right: 0.4vh solid #61615e;
-    border-radius: 0.5vh 20vh 0.9vh 0;
+    top: 2.1rem;
+    left: 8.2rem;
+    height: 6.4rem;
+    width: 21rem;
+    border-top: 0.5rem solid #61615e;
+    border-right: 0.4rem solid #61615e;
+    border-radius: 0.5rem 20rem 0.9rem 0;
     transform-style: preserve-3d;
     transform-origin: top;
-    transform: translateZ(0.06vh) rotateX(2deg);
+    transform: translateZ(0.06rem) rotateX(2deg);
 }
 
 #charger-cable::before {
@@ -662,15 +663,15 @@ body {
     display: block;
     content: "";
     box-sizing: border-box;
-    top: -0.5vh;
-    left: 0vh;
-    height: 1vh;
-    width: 0.25vh;
-    border-top: 1vh solid #52524f;
-    border-left: 0.25vh solid #52524f;
-    border-radius: 0.2vh 0 0 0;
-    transform-origin: 0.25vh 0.25vh;
-    transform: rotateZ(45deg) translate3d(0.02vh, 0.3vh, -0.01vh);
+    top: -0.5rem;
+    left: 0rem;
+    height: 1rem;
+    width: 0.25rem;
+    border-top: 1rem solid #52524f;
+    border-left: 0.25rem solid #52524f;
+    border-radius: 0.2rem 0 0 0;
+    transform-origin: 0.25rem 0.25rem;
+    transform: rotateZ(45deg) translate3d(0.02rem, 0.3rem, -0.01rem);
 }
 
 #charger-cable::after {
@@ -678,20 +679,20 @@ body {
     display: block;
     content: "";
     bottom: 0;
-    right: -0.3vh;
-    height: 0.4vh;
-    width: 0.4vh;
+    right: -0.3rem;
+    height: 0.4rem;
+    width: 0.4rem;
     background: #484846;
     transform-origin: center;
-    transform: translateZ(-0.2vh) rotateX(-90deg) rotateY(-45deg);
+    transform: translateZ(-0.2rem) rotateX(-90deg) rotateY(-45deg);
 }
 
 #laptop-wrapper {
     position: absolute;
     display: block;
-    top: 8vh;
-    left: 19vh;
-    height: 7vh;
+    top: 8rem;
+    left: 19rem;
+    height: 7rem;
     aspect-ratio: 12.31 / 8.71; /* Aspect ratio of Macbook Air 14-inch */
     transform-style: preserve-3d;
 }
@@ -701,14 +702,14 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 7vh;
+    height: 7rem;
     aspect-ratio: 12.31 / 8.71;
-    border-radius: 0.4vh;
+    border-radius: 0.4rem;
     background: #b8b9be;
     box-shadow: inset 1px 1px 9px -9px white, inset -1px -1px 9px -9px black;
     transform-origin: top;
     transform-style: preserve-3d;
-    transform: translateZ(0.3vh) rotateX(-1deg);
+    transform: translateZ(0.3rem) rotateX(-1deg);
 }
 
 #laptop-base::before {
@@ -717,24 +718,24 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 7vh;
+    height: 7rem;
     aspect-ratio: 12.31 / 8.71;
-    border-radius: 0.4vh;
+    border-radius: 0.4rem;
     background: linear-gradient(135deg, #9b9da3, 35%, #c9cacd 41%, #87888c, 44%, #87888c, 97%, #9c9ca0);
-    box-shadow: inset 0 0 9px -7px black, 0 0.2vh 9px -5px black;
+    box-shadow: inset 0 0 9px -7px black, 0 0.2rem 9px -5px black;
     transform-origin: top;
     transform-style: preserve-3d;
-    transform: translateZ(-0.3vh) rotateX(1deg);
+    transform: translateZ(-0.3rem) rotateX(1deg);
 }
 
 #laptop-base::after {
     position: absolute;
     display: block;
     content: "";
-    top: 0.05963859018vh; /* 0.4 - 0.4 * sin(pi/4) */
-    left: 0.05963859018vh;
-    height: 0.3vh;
-    width: 11.8849231974vh; /* sqrt(7^2 + (7 * 12.31/8.71)^2) - (0.4 - 0.4 * sin(pi/4)) * 2 */
+    top: 0.05963859018rem; /* 0.4 - 0.4 * sin(pi/4) */
+    left: 0.05963859018rem;
+    height: 0.3rem;
+    width: 11.8849231974rem; /* sqrt(7^2 + (7 * 12.31/8.71)^2) - (0.4 - 0.4 * sin(pi/4)) * 2 */
     background: linear-gradient(to right, #9b9da3, 35%, #c9cacd 41%, #87888c, 44%, #87888c, 97%, #9c9ca0);
     box-shadow: inset 0 0 9px -9px black;
     transform-origin: top left;
@@ -745,39 +746,39 @@ body {
 #laptop-keyboard {
     position: absolute;
     display: block;
-    top: 0.35vh;
-    left: 0.5vh;
-    right: 0.5vh;
-    height: 4vh;
-    border-radius: 0.2vh;
-    border: 0.02vh solid #b2b4b9;
+    top: 0.35rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 4rem;
+    border-radius: 0.2rem;
+    border: 0.02rem solid #b2b4b9;
     background: linear-gradient(#949599, 15%, #98999c);
     box-sizing: border-box;
-    box-shadow: inset 0.1vh -0.1vh 9px -9px black;
+    box-shadow: inset 0.1rem -0.1rem 9px -9px black;
 }
 
 #laptop-trackpad {
     position: absolute;
     display: block;
-    bottom: 0.35vh;
-    left: calc(50% - 1.75vh);
-    height: 2vh;
-    width: 3.5vh;
-    border-radius: 0.2vh;
-    border: 0.02vh solid #b2b4b9;
+    bottom: 0.35rem;
+    left: calc(50% - 1.75rem);
+    height: 2rem;
+    width: 3.5rem;
+    border-radius: 0.2rem;
+    border: 0.02rem solid #b2b4b9;
     background: linear-gradient(#b8b9be, 15%, #c9cacd);
     box-sizing: border-box;
-    box-shadow: inset 0.1vh -0.1vh 9px -9px black;
+    box-shadow: inset 0.1rem -0.1rem 9px -9px black;
 }
 
 #laptop-base-groove {
     position: absolute;
     display: block;
     bottom: 0;
-    left: calc(50% - 0.7vh);
-    height: 0.2vh;
-    width: 1.4vh;
-    border-radius: 0.2vh 0.2vh 0 0;
+    left: calc(50% - 0.7rem);
+    height: 0.2rem;
+    width: 1.4rem;
+    border-radius: 0.2rem 0.2rem 0 0;
     background: linear-gradient(#b8b9be, 15%, #c9cacd);
     transform-style: preserve-3d;
 }
@@ -786,11 +787,11 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: -0.1vh;
+    bottom: -0.1rem;
     left: 0;
-    height: 0.1vh;
-    width: 1.4vh;
-    border-radius: 0 0 0.1vh 0.1vh;
+    height: 0.1rem;
+    width: 1.4rem;
+    border-radius: 0 0 0.1rem 0.1rem;
     background: #b8b9be;
     transform-origin: top;
     transform-style: preserve-3d;
@@ -802,20 +803,20 @@ body {
     display: block;
     top: 0;
     left: 0;
-    height: 7vh;
+    height: 7rem;
     aspect-ratio: 12.31 / 8.71;
-    border-radius: 0.4vh;
+    border-radius: 0.4rem;
     background: #5c5c5b;
     box-shadow: inset 1px 1px 9px -9px white, inset -1px -1px 9px -9px black;
     /* overflow: hidden; */
     transform-origin: top;
     transform-style: preserve-3d;
-    transform: translateZ(0.3vh) rotateX(-1deg);
+    transform: translateZ(0.3rem) rotateX(-1deg);
     transition: transform 0.5s;
 }
 
 .check:checked + label #laptop-screen {
-    transform: translateZ(0.3vh) rotateX(95deg);
+    transform: translateZ(0.3rem) rotateX(95deg);
 }
 
 #laptop-screen::before {
@@ -824,9 +825,9 @@ body {
     content: "";
     top: -0.5px;
     left: calc(-12.31px / 17.42);
-    height: calc(7vh + 1px);
+    height: calc(7rem + 1px);
     aspect-ratio: 12.31 / 8.71;
-    border-radius: 0.4vh;
+    border-radius: 0.4rem;
     background: radial-gradient(transparent, #b8b9be43), linear-gradient(#9b9da3, #b8b9be);
     transform: translateZ(0.1px);
 }
@@ -837,7 +838,7 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 0.3vh;
+    height: 0.3rem;
     width: 100%;
     background: linear-gradient(#5c5c5b, #6b6b69);
 }
@@ -845,9 +846,9 @@ body {
 #laptop-screen-content {
     position: absolute;
     display: block;
-    top: 0.5vh;
+    top: 0.5rem;
     left: 50%;
-    width: 9.5vh;
+    width: 9.5rem;
     aspect-ratio: 759 / 491;
     padding: 0;
     border: none;
@@ -865,31 +866,31 @@ body {
 #cup {
     position: absolute;
     display: block;
-    top: 6vh;
-    right: 14vh;
-    height: 2vh;
-    width: 2vh;
+    top: 6rem;
+    right: 14rem;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
     background: linear-gradient(to bottom right, #c8c4b7, #d5d1c3);
-    box-shadow: inset 0 0 0 0.2vh #f2ece0, inset 0.8vh -0.6vh 9px -9px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 0 0.2rem #f2ece0, inset 0.8rem -0.6rem 9px -9px rgba(0, 0, 0, 0.5);
     transform-style: preserve-3d;
-    transform: translateZ(2vh);
+    transform: translateZ(2rem);
 }
 
 #cup::before {
     position: absolute;
     display: block;
     content: "";
-    top: 1vh;
-    left: -0.1vh; /* renders to the right for some reason */
-    height: 2vh;
-    width: 2vh;
-    padding: 0.6vh;
-    padding-top: 0.5vh;
+    top: 1rem;
+    left: -0.1rem; /* renders to the right for some reason */
+    height: 2rem;
+    width: 2rem;
+    padding: 0.6rem;
+    padding-top: 0.5rem;
     background: #ebe5da;
     box-sizing: border-box;
-    box-shadow: inset 0.6vh 0 9px -9px #ffffff, inset -0.6vh 0 9px -9px rgba(0, 0, 0, 0.5);
-    font-size: 0.5vh;
+    box-shadow: inset 0.6rem 0 9px -9px #ffffff, inset -0.6rem 0 9px -9px rgba(0, 0, 0, 0.5);
+    font-size: 0.5rem;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transform-origin: top;
     transform: rotateX(-90deg) rotateY(-45deg);
@@ -901,13 +902,13 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 2vh;
-    width: 2vh;
+    height: 2rem;
+    width: 2rem;
     border-radius: 50%;
     background: #ebe5da;
-    box-shadow: 0 0.2vh 9px -5px black, inset 0.6vh 0 9px -9px #ffffff, inset -0.6vh 0 9px -9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.2rem 9px -5px black, inset 0.6rem 0 9px -9px #ffffff, inset -0.6rem 0 9px -9px rgba(0, 0, 0, 0.5);
     transform-origin: center center;
-    transform: translateZ(-2vh) rotateZ(45deg);
+    transform: translateZ(-2rem) rotateZ(45deg);
 }
 
 .check:checked + #cup::before {
@@ -917,28 +918,28 @@ body {
 #pot {
     position: absolute;
     display: block;
-    top: 2vh;
-    right: 2vh;
-    height: 4.9vh; /* renders too large at 5vh? */
-    width: 4.9vh;
+    top: 2rem;
+    right: 2rem;
+    height: 4.9rem; /* renders too large at 5rem? */
+    width: 4.9rem;
     border-radius: 50%;
     background: #575040;
-    box-shadow: inset 0 0 0 0.5vh #c7baa1;
+    box-shadow: inset 0 0 0 0.5rem #c7baa1;
     transform-style: preserve-3d;
-    transform: translateZ(4vh);
+    transform: translateZ(4rem);
 }
 
 #pot::before {
     position: absolute;
     display: block;
     content: "";
-    top: 2.5vh;
+    top: 2.5rem;
     left: 0;
     height: 0;
-    width: 3vh;
-    border-top: 4vh solid #a69d8c;
-    border-left: 1vh solid transparent;
-    border-right: 1vh solid transparent;
+    width: 3rem;
+    border-top: 4rem solid #a69d8c;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
     transform-style: preserve-3d;
     transform-origin: top;
     transform: rotateX(-90deg) rotateY(-45deg);
@@ -948,29 +949,29 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: 1vh;
-    left: 1vh;
-    height: 3vh;
-    width: 3vh;
+    top: 1rem;
+    left: 1rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
     background: #a69d8c;
-    box-shadow: 0 0.2vh 2vh -0.3vh black;
+    box-shadow: 0 0.2rem 2rem -0.3rem black;
     transform-style: preserve-3d;
-    transform: translateZ(-4vh);
+    transform: translateZ(-4rem);
 }
 
 #plant {
     position: absolute;
     display: block;
-    top: 2.5vh;
-    left: 2.25vh;
+    top: 2.5rem;
+    left: 2.25rem;
     height: 0;
-    border-bottom: 4vh solid #008000;
-    border-left: 0.25vh solid transparent;
-    border-right: 0.25vh solid transparent;
+    border-bottom: 4rem solid #008000;
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
     transform-style: preserve-3d;
     transform-origin: top;
-    transform: translateZ(4vh) rotateX(-90deg) rotateY(-45deg);
+    transform: translateZ(4rem) rotateX(-90deg) rotateY(-45deg);
     transition: transform ease-in-out 1s;
 }
 
@@ -978,10 +979,10 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: -4.2vh;
-    left: -0.24vh;
-    height: 0.48vh;
-    width: 0.48vh;
+    bottom: -4.2rem;
+    left: -0.24rem;
+    height: 0.48rem;
+    width: 0.48rem;
     border-radius: 50%;
     background: #008000;
     transform-style: preserve-3d;
@@ -990,7 +991,7 @@ body {
 }
 
 .check:checked + label #plant {
-    transform: scale3d(200%, 200%, 200%) translateZ(4vh) rotateX(-90deg) rotateY(-45deg);
+    transform: scale3d(200%, 200%, 200%) translateZ(4rem) rotateX(-90deg) rotateY(-45deg);
 }
 
 .leaf {
@@ -1003,8 +1004,8 @@ body {
 #ltop {
     top: 0;
     left: 0;
-    height: 1vh;
-    width: 1.5vh;
+    height: 1rem;
+    width: 1.5rem;
     transform-origin: top left;
     transform: rotateX(-30deg);
     transition: transform ease-in-out 1s;
@@ -1015,40 +1016,40 @@ body {
 }
 
 #lmid {
-    top: 0.5vh;
+    top: 0.5rem;
     left: 0;
-    height: 1.7vh;
-    width: 1.7vh;
+    height: 1.7rem;
+    width: 1.7rem;
     transform-origin: top left;
     transform: rotateY(130deg) rotateX(-45deg);
     transition: transform ease-in-out 1s;
 }
 
 .check:checked + label #lmid {
-    transform: scale(80%) translateY(0.3vh) rotateY(120deg) rotateX(-34deg);
+    transform: scale(80%) translateY(0.3rem) rotateY(120deg) rotateX(-34deg);
 }
 
 #lbase {
-    top: 1.3vh;
-    left: 0.1vh;
-    height: 1.8vh;
-    width: 1.8vh;
+    top: 1.3rem;
+    left: 0.1rem;
+    height: 1.8rem;
+    width: 1.8rem;
     transform-origin: top left;
     transform: rotateY(70deg) rotateX(45deg);
     transition: transform ease-in-out 1s;
 }
 
 .check:checked + label #lbase {
-    transform: scale(80%) translateY(0.6vh) rotateY(75deg) rotateX(37deg);
+    transform: scale(80%) translateY(0.6rem) rotateY(75deg) rotateX(37deg);
 }
 
 #chair-wrapper {
     position: absolute;
     display: block;
-    top: 21vh;
-    left: 20vh;
-    height: 13vh;
-    width: 13vh;
+    top: 21rem;
+    left: 20rem;
+    height: 13rem;
+    width: 13rem;
     transform-style: preserve-3d;
 }
 
@@ -1056,10 +1057,10 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: 6.5vh;
-    left: 5.5vh;
-    height: 9.5vh;
-    width: 2vh;
+    top: 6.5rem;
+    left: 5.5rem;
+    height: 9.5rem;
+    width: 2rem;
     background: #c1c4c4;
     transform-origin: top;
     transition: transform ease 3s;
@@ -1069,9 +1070,9 @@ body {
     position: absolute;
     display: block;
     content: "";
-    height: 13vh;
-    width: 13vh;
-    border-radius: 3vh;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 3rem;
     background: #c1c4c4;
     transform-style: preserve-3d;
     transition: transform ease 3s;
@@ -1088,22 +1089,22 @@ body {
 #chair-base {
     position: absolute;
     display: block;
-    top: 0vh;
-    left: 0vh;
-    height: 13vh;
-    width: 13vh;
+    top: 0rem;
+    left: 0rem;
+    height: 13rem;
+    width: 13rem;
     transform-style: preserve-3d;
-    transform: translateZ(1.5vh);
+    transform: translateZ(1.5rem);
 }
 
 #chair-base::before {
     position: absolute;
     display: block;
     content: "";
-    top: 6.5vh;
-    left: 5.75vh;
-    height: 4vh;
-    width: 1.5vh;
+    top: 6.5rem;
+    left: 5.75rem;
+    height: 4rem;
+    width: 1.5rem;
     background: radial-gradient(circle at bottom, #44413e, 10%, #4c4947);
     transform-style: preserve-3d;
     transform-origin: top;
@@ -1114,25 +1115,25 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: 5.75vh;
-    left: 5.75vh;
-    height: 1.5vh;
-    width: 1.5vh;
+    top: 5.75rem;
+    left: 5.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     background: #4c4947;
-    box-shadow: 0 0 0.5vh 0.5vh #4c4947;
+    box-shadow: 0 0 0.5rem 0.5rem #4c4947;
 }
 
 .chair-leg {
     position: absolute;
     display: block;
-    top: 6.5vh;
-    left: 5.75vh;
-    height: 6.5vh;
-    width: 1.5vh;
-    border-radius: 0 0 0.75vh 0.75vh;
+    top: 6.5rem;
+    left: 5.75rem;
+    height: 6.5rem;
+    width: 1.5rem;
+    border-radius: 0 0 0.75rem 0.75rem;
     background: linear-gradient(to top, #585552, 9%, transparent), linear-gradient(to right, #585552, 20%, #74716f, 80%, #585552);
-    box-shadow: inset 0 0.5vh 0.5vh 0.5vh #585552;
+    box-shadow: inset 0 0.5rem 0.5rem 0.5rem #585552;
     transform-style: preserve-3d;
     transform-origin: top;
 }
@@ -1143,30 +1144,30 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 6.5vh;
-    width: 1.5vh;
-    border-radius: 0 0 0.75vh 0.75vh;
+    height: 6.5rem;
+    width: 1.5rem;
+    border-radius: 0 0 0.75rem 0.75rem;
     background: #585552;
     transform-style: preserve-3d;
-    transform: translateZ(-0.5vh);
+    transform: translateZ(-0.5rem);
 }
 
 .chair-leg:nth-of-type(2n)::before {
-    box-shadow: inset -0.5vh 0.5vh 0.5vh 0 #4c4947;
+    box-shadow: inset -0.5rem 0.5rem 0.5rem 0 #4c4947;
 }
 
 .chair-leg:nth-of-type(2n+1)::before {
-    box-shadow: inset 0.5vh 0.5vh 0.5vh 0 #4c4947;
+    box-shadow: inset 0.5rem 0.5rem 0.5rem 0 #4c4947;
 }
 
 .chair-leg::after {
     position: absolute;
     display: block;
     content: "";
-    top: 0.5vh;
-    height: 5.25vh;
-    width: 0.5vh;
-    box-shadow: inset 0 1.5vh 0.5vh -0.5vh #4c4947;
+    top: 0.5rem;
+    height: 5.25rem;
+    width: 0.5rem;
+    box-shadow: inset 0 1.5rem 0.5rem -0.5rem #4c4947;
     transform-style: preserve-3d;
 }
 
@@ -1204,9 +1205,9 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: 0.75vh;
-    height: 0.5vh;
-    width: 1.5vh;
+    bottom: 0.75rem;
+    height: 0.5rem;
+    width: 1.5rem;
     background: linear-gradient(50deg, #585552, 80%, #4c4947);
     transform-style: preserve-3d;
     transform-origin: bottom;
@@ -1224,58 +1225,58 @@ body {
 .chair-wheel {
     position: absolute;
     display: block;
-    bottom: 0.1vh;
-    height: 1vh;
-    width: 1vh;
+    bottom: 0.1rem;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     background: radial-gradient(#312d2c, 60%, #494341);
     transform-style: preserve-3d;
     transform-origin: center center;
-    transform: rotateY(90deg) translateX(1vh);
+    transform: rotateY(90deg) translateX(1rem);
 }
 
 .chair-wheel::before {
     position: absolute;
     display: block;
     content: "";
-    height: 1vh;
-    width: 1vh;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     background: radial-gradient(#312d2c, 60%, #494341);
-    transform: translateZ(0.5vh);
+    transform: translateZ(0.5rem);
 }
 
 .chair-leg:not(:nth-of-type(3n+1)) > .chair-wheel {
-    transform: rotateY(90deg) rotateX(90deg) translateX(1vh);
+    transform: rotateY(90deg) rotateX(90deg) translateX(1rem);
 }
 
 #chair-seat {
     position: absolute;
     display: block;
-    height: 11vh;
-    width: 10vh;
-    top: 1vh;
-    left: 1.5vh;
-    border-radius: 3vh;
+    height: 11rem;
+    width: 10rem;
+    top: 1rem;
+    left: 1.5rem;
+    border-radius: 3rem;
     background: #9f9c97;
-    box-shadow: inset 0 0 4vh 1vh #c3bcb8;
+    box-shadow: inset 0 0 4rem 1rem #c3bcb8;
     transform-style: preserve-3d;
     transform-origin: center center;
-    transform: translateZ(10vh);
-    transition: transform ease 3s;
+    transform: translateZ(10rem);
+    transition: rotate ease 3s;
 }
 
 #chair-seat::before {
     position: absolute;
     display: block;
     content: "";
-    top: 5.5vh;
-    left: 4.35vh;
-    height: 4.45vh;
-    width: 1.3vh;
+    top: 5.5rem;
+    left: 4.35rem;
+    height: 4.45rem;
+    width: 1.3rem;
     background: linear-gradient(to top, #433f3c, 15%, #4c4947);
     transform-origin: top;
-    transform: rotateZ(45deg) rotateX(-90deg) translateZ(0.1vh);
+    transform: rotateZ(45deg) rotateX(-90deg) translateZ(0.1rem);
     transition: transform ease 3s;
 }
 
@@ -1283,36 +1284,36 @@ body {
     position: absolute;
     display: block;
     content: "";
-    top: 4.75vh;
-    left: 4.25vh;
-    height: 1.5vh;
-    width: 1.5vh;
+    top: 4.75rem;
+    left: 4.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     background: radial-gradient(#433f3c, 90%, #4c4947);
-    transform: translateZ(-4.5vh);
+    transform: translateZ(-4.5rem);
 }
 
 .check:checked + label #chair-seat {
-    transform: translateZ(10vh) rotateZ(900deg);
+    rotate: 900deg; /* transition: transform would break on window resize */
 }
 
 .check:checked + label #chair-seat::before {
-    transform: rotateZ(-855deg) rotateX(-90deg) translateZ(0.1vh);
+    transform: rotateZ(-855deg) rotateX(-90deg) translateZ(0.1rem);
 }
 
 #chair-bend-1 {
     position: absolute;
     display: block;
-    top: 6.3vh;
-    left: 4.5vh;
-    height: 5.5vh;
-    width: 7vh;
-    border-bottom: 0.75vh solid #4c4947;
-    border-left: 0.75vh solid #4c4947;
-    border-radius: 0 0 0 0.75vh;
+    top: 6.3rem;
+    left: 4.5rem;
+    height: 5.5rem;
+    width: 7rem;
+    border-bottom: 0.75rem solid #4c4947;
+    border-left: 0.75rem solid #4c4947;
+    border-radius: 0 0 0 0.75rem;
     transform-style: preserve-3d;
     transform-origin: top left;
-    transform: translateZ(-1vh) rotateY(-90deg);
+    transform: translateZ(-1rem) rotateY(-90deg);
 }
 
 #chair-bend-1::before {
@@ -1321,8 +1322,8 @@ body {
     content: "";
     top: 0;
     left: 0;
-    height: 5.5vh;
-    width: 1vh;
+    height: 5.5rem;
+    width: 1rem;
     background: #4c4947;
     transform-origin: left;
     transform: rotateY(90deg);
@@ -1332,10 +1333,10 @@ body {
     position: absolute;
     display: block;
     content: "";
-    bottom: -0.75vh;
+    bottom: -0.75rem;
     left: 0;
-    height: 1vh;
-    width: 7vh;
+    height: 1rem;
+    width: 7rem;
     background: linear-gradient(#52504d, 25%, #4c4947, 75%, #52504d);
     transform-origin: bottom;
     transform: rotateX(90deg);
@@ -1344,69 +1345,69 @@ body {
 #chair-bend-2 {
     position: absolute;
     display: block;
-    top: 6.3vh;
-    left: 5.5vh;
-    height: 5.5vh;
-    width: 7vh;
-    border-bottom: 0.75vh solid #44413f;
-    border-left: 0.75vh solid #44413f;
-    border-radius: 0 0 0 0.75vh;
+    top: 6.3rem;
+    left: 5.5rem;
+    height: 5.5rem;
+    width: 7rem;
+    border-bottom: 0.75rem solid #44413f;
+    border-left: 0.75rem solid #44413f;
+    border-radius: 0 0 0 0.75rem;
     transform-style: preserve-3d;
     transform-origin: top left;
-    transform: translateZ(-1vh) rotateY(-90deg);
+    transform: translateZ(-1rem) rotateY(-90deg);
 }
 
 #chair-bend-2::after {
     position: absolute;
     display: block;
     content: "";
-    bottom: -0.75vh;
+    bottom: -0.75rem;
     right: 0;
-    height: 0.75vh;
-    width: 1vh;
+    height: 0.75rem;
+    width: 1rem;
     background: linear-gradient(to right, #52504d, 25%, #4c4947, 75%, #52504d);
     transform-origin: right;
-    transform: rotateY(90deg) translateZ(0.07vh);
+    transform: rotateY(90deg) translateZ(0.07rem);
 }
 
 #chair-back {
     position: absolute;
     display: block;
-    height: 8vh;
-    width: 10vh;
+    height: 8rem;
+    width: 10rem;
     bottom: 0;
-    border-radius: 3vh;
+    border-radius: 3rem;
     background: #605f5b;
-    box-shadow: inset 0 2vh 4vh 1vh #9f9a96;
+    box-shadow: inset 0 2rem 4rem 1rem #9f9a96;
     transform-style: preserve-3d;
     transform-origin: bottom;
-    transform: translateZ(2vh) rotateX(-90deg);
+    transform: translateZ(2rem) rotateX(-90deg);
 }
 
 #chair-back::before {
     position: absolute;
     display: block;
     content: "";
-    top: 3.3vh;
-    left: 4.5vh;
-    height: 7vh;
-    width: 1vh;
+    top: 3.3rem;
+    left: 4.5rem;
+    height: 7rem;
+    width: 1rem;
     background: linear-gradient(90deg, #44413f, 25%, #4c4947, 75%, #44413f);
     /* backface-visibility: hidden; */
-    transform: translateZ(0.72vh) rotateY(180deg);
+    transform: translateZ(0.72rem) rotateY(180deg);
 }
 
 #chair-back::after {
     position: absolute;
     display: block;
     content: "";
-    height: 8vh;
-    width: 10vh;
+    height: 8rem;
+    width: 10rem;
     bottom: 0;
-    border-radius: 3vh;
+    border-radius: 3rem;
     background: #93918d;
     backface-visibility: hidden;
-    box-shadow: inset 0 0 4vh 1vh #b1aba7;
+    box-shadow: inset 0 0 4rem 1rem #b1aba7;
     transform-origin: center center;
     transform: rotateY(180deg);
 }
@@ -1426,10 +1427,10 @@ body {
 .point {
     position: absolute;
     display: block;
-    height: 0.5vh;
-    width: 0.5vh;
+    height: 0.5rem;
+    width: 0.5rem;
     border-radius: 50%;
-    border: 0.5vh solid rgba(0, 0, 0, 0.3);
+    border: 0.5rem solid rgba(0, 0, 0, 0.3);
     background-color: black;
     background-clip: padding-box;
     cursor: pointer;
@@ -1444,49 +1445,49 @@ body {
     background-color: black;
     background-clip: padding-box;
     opacity: 60%;
-    box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1) !important; /* bad practice, but overrides animation without distrubing cycle*/
+    box-shadow: 0 0 2rem 0.2rem rgba(0, 0, 0, 1) !important; /* bad practice, but overrides animation without distrubing cycle*/
 }
 
 .point::before {
     position: absolute;
     display: block;
     content: "";
-    top: -2vh;
-    left: -2vh;
-    height: 0.5vh;
-    width: 0.5vh;
+    top: -2rem;
+    left: -2rem;
+    height: 0.5rem;
+    width: 0.5rem;
     border-radius: 50%;
-    border: 2vh solid transparent;
+    border: 2rem solid transparent;
 }
 
 #photo-point {
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 4vh) rotateX(-20deg);
+    transform: translate3d(-50%, -50%, 4rem) rotateX(-20deg);
 }
 
 #laptop-point {
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 4vh) rotateX(90deg);
+    transform: translate3d(-50%, -50%, 4rem) rotateX(90deg);
 }
 
 #cup-point {
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 2.5vh) rotateX(90deg) rotateY(45deg);
+    transform: translate3d(-50%, -50%, 2.5rem) rotateX(90deg) rotateY(45deg);
 }
 
 #pot-point {
-    bottom: -1vh;
-    left: -1vh;
+    bottom: -1rem;
+    left: -1rem;
     transform: rotateX(90deg) rotateY(45deg);
 }
 
 #chair-point {
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%, -50%, 20vh) rotateX(90deg) rotateY(45deg);
+    transform: translate3d(-50%, -50%, 20rem) rotateX(90deg) rotateY(45deg);
 }
 
 @keyframes up-down {
@@ -1504,11 +1505,11 @@ body {
     }
 
     20% {
-        box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2rem 0.2rem rgba(0, 0, 0, 1);
     }
 
     29% {
-        box-shadow: 0 0 2vh 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0);
     }
 
     30% {
@@ -1516,11 +1517,11 @@ body {
     }
 
     50% {
-        box-shadow: 0 0 2vh 0.2vh rgba(0, 0, 0, 1);
+        box-shadow: 0 0 2rem 0.2rem rgba(0, 0, 0, 1);
     }
 
     59% {
-        box-shadow: 0 0 2vh 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 2rem 0 rgba(0, 0, 0, 0);
     }
 
     60% {
